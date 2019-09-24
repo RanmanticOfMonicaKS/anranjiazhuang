@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 变量类似于 宾馆房间号码
+        // 1. 先到酒店的前台 定房间  前台告诉我们房间号码   2. 拿着房间号码 牌  入住就可以了
+        // 使用变量如此 1. 声明变量   variable 可变的   var 声明变量
+        var num; // num 变量的名字
+        // 2. 存放数据
+        num = 18; // 18 就是存放的数据   = 这个符号不是等于的意思 是 赋值  把18 给 num 
+
+        // 3. 我们更喜欢连写  
+        var uname = 'pink老师'; // 直接声明变量 并且赋值  我们成为 变量的初始化  
+        console.log(uname); // 在控制台上打印 uname
+
+        // 课堂练习  
+        // 我叫卡卡西，我住在火影村，我今年30了我的邮箱是kakaxi@qq.com，我的工资2000.
+        var uname = '旗木卡卡西';
+        var address = '火影村';
+        var age = 30;
+        var email = 'kakaxi@qq.com';
+        var gongzi = 2000;
+        console.log(uname);
+        console.log(address);
+        console.log(age);
+        console.log(email);
+        console.log(gongzi);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

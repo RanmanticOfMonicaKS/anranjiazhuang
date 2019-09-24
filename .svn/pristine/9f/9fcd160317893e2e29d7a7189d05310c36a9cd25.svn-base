@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // while循环的结构是讲循环的三角结构，提炼出来
+        // 且不完全依赖于计数器；
+        // 用户名：admin 密码：123456案例，用户只要没有同时输入正确的用户名和密码
+        //循环就将继续
+        var userName = prompt('请输入您的用户名：');
+        var pwd = prompt('请输入您的密码：');
+        while (userName != 'admin' || pwd != '123456') {
+            userName = prompt('请输入您的用户名：');
+            pwd = prompt('请输入您的密码：');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

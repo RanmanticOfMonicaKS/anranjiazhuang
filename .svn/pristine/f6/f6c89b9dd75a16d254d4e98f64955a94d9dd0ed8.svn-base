@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 课堂练习：
+        // 需求： 定义一个数组， 里面存放: 星期一、 星期二....直到星期天（ 共7天），
+        // 并控制台输出： 今天是: 星期四；
+
+        // 定义数组
+        var days = ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期天'];
+        // 查看数组的所有元素
+        console.log(days);
+        // 求这个数组的长度(长度是用来记录数组中元素的个数！)
+        console.log(days.length);
+        // 找到星期四
+        console.log('今天是: ' + days[3]);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

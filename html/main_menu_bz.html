@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" href="../css/aui.2.0.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <title>Document</title>
+    <style>
+        .wrap {
+            position: relative;
+            background-color: transparent;
+        }
+
+        .aui-form-list {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        .aui-form-list textarea {
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body class="wrap">
+    <ul class="aui-list aui-form-list">
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner">
+                <div class="aui-list-item-label">
+                    备注内容：
+                </div>
+                <div class="aui-list-item-input">
+                    <textarea placeholder="仅作查看备注，请点击取消按钮" class="bzInfo" tapmode></textarea>
+                </div>
+            </div>
+        </li>
+
+        <li class="aui-list-item">
+            <div class="aui-list-item-inner aui-list-item-center aui-list-item-btn">
+                <div class="aui-btn aui-btn-info aui-margin-r-5" tapmode onclick="submitBz();">提交</div>
+                <div class="aui-btn aui-btn-danger aui-margin-l-5" tapmode onclick="api.closeFrame();">取消</div>
+            </div>
+        </li>
+    </ul>
+</body>
+<script src="../script/plugin/swiper.min.js" charset="utf-8"></script>
+<script src="../script/plugin/jquery.min.js" charset="utf-8"></script>
+<script src="../script/plugin/api.js" charset="utf-8"></script>
+<script src="../script/common.js"></script>
+<script src="../script/main_menu_bz.js"></script>
+
+
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*  需求：课堂案例要求：交换两个变量的值 
+                ( 实现思路：使用一个 临时变量 用来做中间存储 )
+
+                我们一定根据需求写出思路来  第二步就是把思路转换为代码  */
+
+
+        // 1、变量初始化
+        var num1 = 10; // 左手
+        var num2 = 20; // 右手
+        var temp; // 先准备一个桌子
+
+        // 2. 左手的苹果给桌子 
+        temp = num1; //这个tmp变量，是为了存储num1 原来的值
+
+        // 3. 右手的苹果给 左手
+        num1 = num2; //20
+
+        // 4. 桌子的苹果给 右手
+        num2 = temp;
+
+        // 5. 输出变量的值
+        console.log(num1);
+        console.log(num2);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

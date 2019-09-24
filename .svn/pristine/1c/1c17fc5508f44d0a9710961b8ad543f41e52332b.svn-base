@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // continue 关键字  继续  的意思 
+        for (var i = 1; i <= 5; i++) {
+            if (i == 3) {
+                console.log('这个包子有虫子，扔掉');
+                continue; // 跳出本次循环  跳出的是 第 3次 循环 
+            }
+            console.log('我正在吃第' + i + '个包子呢');
+        }
+        // 1. 本来计划，这for循环要执行 5次
+        // 2. 因为第3次循环的时候，遇到了continue  终止当前次循环 直接跳到  i++ 进行下一轮的循环
+        // 3. 不是退出整个循环  退出当前第3次的循环
+        // 1.  求 1~100  除了能被7整除的  其余整数的和 
+        var sum = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 7 == 0) {
+                // 我们不要能被7整除的这些数  略过 
+                continue;
+            }
+            sum += i;
+        }
+        console.log(sum);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1. 打印三行三列的星星
+        // ☆☆☆
+        // ☆☆☆ 
+        // ☆☆☆
+
+
+        // var str = '';
+        // // (1) 外层循环控制 行数
+        /* for (var i = 0; i < 3; i++) {
+            // (2) 里面的循环控制 一行星星的个数 一行有三个星星
+            for (var j = 0; j < 3; j++) {
+                str += '☆';
+            }
+            str = str + '\n';
+        }
+        console.log(str); */
+
+
+
+        // // 2. 用户输入个数
+        /* var num = prompt('请输入您打印几行几列的星星:');
+        var str = '';
+        for (var i = 0; i < num; i++) {
+            for (j = 0; j < num; j++) {
+                str += '☆';
+            }
+            str += '\n';
+        }
+        console.log(str); */
+
+
+        // 3. 用户输入行数 和 列数
+        var row = prompt('请输入您打印几行星星:');
+        var col = prompt('请输入您打印几列星星:');
+        var str = '';
+        for (var i = 0; i < row; i++) {
+            for (j = 0; j < col; j++) {
+                str += '☆';
+            }
+            str += '\n';
+        }
+        console.log(str);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

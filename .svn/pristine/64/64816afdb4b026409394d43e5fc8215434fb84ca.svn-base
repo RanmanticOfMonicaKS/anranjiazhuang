@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+  <link rel="stylesheet" type="text/css" href="../css/api.css" />
+  <link rel="stylesheet" href="../css/aui.2.0.css">
+  <!-- <link rel="stylesheet" href="../css/animate.css"> -->
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <title>Document</title>
+  <style media="screen">
+    /* 轮播图部分 */
+    .swiper-slide {
+      height: 100%;
+      background-color: transparent;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      /* border-radius: 100px; */
+    }
+
+    .bdimg {
+      border: 20px solid #000;
+      border-image: url('../image/main_bd.jpg') 100 125 150 130 fill/100 100 100 100/27px 27px 20px 28px repeat;
+      /* border-radius: 100px; */
+    }
+
+    /*  .bdimg {
+      background-image: linear-gradient(92deg, #f35626 0%, #feab3a 100%);
+      animation: hue 20s infinite linear;
+
+    } */
+
+
+    /* mask遮盖层部分的样式 */
+    .mask {
+      position: relative;
+      width: 100%;
+      height: 20px;
+      background-image: linear-gradient(92deg, #59493f 0%, #dfc7af 100%);
+      top: 0px;
+      z-index: 1;
+    }
+
+    /* 导航部分开始 */
+    nav {
+      /* background-color: #ccc; */
+      color: #fff;
+      position: relative;
+      z-index: 1;
+      /* padding-top: 10px; */
+      top: -10px;
+    }
+
+    nav li {
+      width: 32%;
+      height: 100px;
+      padding-top: 10px;
+      /* background-color: #ccc; */
+      text-align: center;
+      box-shadow: -2px -2px 0px #666;
+      border-radius: 10px;
+
+    }
+
+    nav li {
+      background-image: linear-gradient(92deg, #f35626 0%, #feab3a 100%);
+      animation: hue 20s infinite linear;
+    }
+
+    nav li>p {
+      padding-top: 10px;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    /* 主体部分的样式 */
+    main {
+      background-image: linear-gradient(92deg, #59493f 0%, #dfc7af 100%);
+    }
+
+    /*
+    main .aui-list-item {
+      position: relative;
+      border-bottom: 1px solid #ccc;
+    }
+
+    main .aui-list i {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      font-size: 20px;
+      transform: translate(0, -50%);
+    }
+
+    main .aui-list div {
+      margin-left: 40px;
+    } */
+    .main_content {
+      position: relative;
+      top: -10px;
+      background-image: linear-gradient(92deg, #59493f 0%, #dfc7af 100%);
+      padding: 10px 0px;
+    }
+
+    .aui-list:before,
+    .aui-list:after,
+    .aui-list-item:after,
+    .aui-list.aui-list-in .aui-list-item-inner:after {
+      display: none;
+    }
+
+    main {
+      /* background-color: #ccc; */
+      color: #fff;
+      position: relative;
+      z-index: 1;
+      padding-top: 10px;
+    }
+
+    .aui-list {
+      overflow: hidden;
+    }
+
+    main li .img {
+      position: absolute;
+      top: 50%;
+
+      font-size: 25px;
+      color: #fff;
+      transform: translate(0, -50%)
+    }
+
+    main .aui-list .aui-list-item {
+      margin: 0px 10px 10px 10px;
+    }
+
+    /*从左摊入 */
+    @keyframes bounceInLeft {
+
+      from,
+      60%,
+      75%,
+      90%,
+      to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+      }
+
+      0% {
+        opacity: 0;
+        transform: translate3d(-3000px, 0, 0);
+      }
+
+      60% {
+        opacity: 1;
+        transform: translate3d(25px, 0, 0);
+      }
+
+      75% {
+        transform: translate3d(-10px, 0, 0);
+      }
+
+      90% {
+        transform: translate3d(5px, 0, 0);
+      }
+
+      to {
+        transform: none;
+      }
+    }
+
+    /* 从右摊入*/
+    @keyframes bounceInRight {
+
+      from,
+      60%,
+      75%,
+      90%,
+      to {
+        animation-timing-function: cubic-bezier(2.125, 2.215, 2.610, 2.755, 3.000);
+      }
+
+      from {
+        opacity: 0;
+        transform: translate3d(3000px, 0, 0);
+      }
+
+      40% {
+        transform: translate3d(2000px, 0, 0);
+      }
+
+      60% {
+        opacity: 1;
+        transform: translate3d(-25px, 0, 0);
+      }
+
+      75% {
+        transform: translate3d(10px, 0, 0);
+      }
+
+      90% {
+        transform: translate3d(-5px, 0, 0);
+      }
+
+      to {
+        transform: none;
+      }
+    }
+
+    main li {
+      position: relative;
+      width: 80%;
+      height: 50px;
+      padding-top: 10px;
+      /* background-color: #ccc; */
+      text-align: center;
+      box-shadow: -2px -2px 0px #666;
+      border-radius: 10px;
+      margin-bottom: 5px;
+      /* background-image: linear-gradient(92deg, #f35626 0%, #feab3a 100%); */
+      background-image: linear-gradient(92deg, #59493f 0%, #dfc7af 100%);
+      animation: hue 20s infinite;
+    }
+
+    .bounceInRight {
+      animation-name: bounceInRight;
+      animation-iteration-count: 1;
+      animation-duration: 4s;
+    }
+
+    .bounceInLeft {
+      animation-name: bounceInLeft;
+      animation-iteration-count: 1;
+      animation-duration: 4s;
+
+    }
+
+    main li .dz {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #dfc7af;
+      box-shadow: -2px -2px 0px #666;
+    }
+
+    main li>p {
+      height: 100%;
+      padding-top: 10px;
+      font-size: 25px;
+      color: #fff;
+      text-indent: 3em;
+      line-height: 100%;
+    }
+
+    .scroll-box {
+      position: relative;
+      width: 100%;
+      height: 40px;
+      /* border: 2px solid #000; */
+      margin: 0px auto;
+      overflow: hidden;
+      vertical-align: middle;
+      border-radius: 5px;
+      color: #fff;
+      /* background-color: #dfc7af; */
+      background-image: linear-gradient(92deg, #36D1A5 0%, #feab3a 100%);
+      animation: hue 20s infinite linear;
+
+    }
+
+
+    .scroll-box ul {
+      position: absolute;
+      left: 0;
+      top: 0;
+      list-style: none;
+      width: 100%;
+    }
+
+    .scroll-box span {
+      position: absolute;
+      font-size: 16px;
+      top: 30%;
+      left: 10px;
+      z-index: 999;
+    }
+
+    .scroll-box ul li {
+      width: 100%;
+      height: 40px;
+      box-sizing: border-box;
+      line-height: 40px;
+      padding-left: 50px;
+      /* background-color: #59493f; */
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .aui-list-item:nth-of-type(2n) {
+      float: left;
+    }
+
+    .aui-list-item:nth-of-type(2n+1) {
+      float: right;
+    }
+  </style>
+</head>
+
+<body class="wrap">
+  <!-- NOTE: swiper 部分 -->
+
+  <div class="swiper-container bdimg">
+    <div class="swiper-wrapper" style="transform:translate3d(0,0,0);">
+      <div class="swiper-slide "> <img src="../image/banner01.jpeg" alt=""> </div>
+      <div class="swiper-slide "> <img src="../image/banner02.jpg" alt=""> </div>
+      <div class="swiper-slide "> <img src="../image/banner03.jpeg" alt=""> </div>
+    </div>
+  </div>
+  <!-- 遮盖层 -->
+  <section class="mask"></section>
+  <!-- NOTE: 导航部分 -->
+  <!-- <nav>
+    <ul class="flex-sa">
+      <li class="flex-1 nav" data-url="main_menu_kh" data-index="1" tapmode>
+        <div class="img">
+          <i class="fa fa-address-book fa-3x"></i>
+        </div>
+        <p> 业主列表 </p>
+      </li>
+      <li class="flex-1 nav" data-url="main_menu_dd" data-index="2" tapmode>
+        <div class="img">
+          <i class="fa fa-book fa-3x"></i>
+        </div>
+        <p>待装列表</p>
+      </li>
+      <li class="flex-1 nav" data-url="main_menu_bz" data-index="3" tapmode>
+        <i class="fa fa-bookmark fa-3x"></i>
+        </div>
+        <p> 备忘提醒 </p>
+      </li>
+    </ul>
+  </nav> -->
+  <!-- 主体部分 -->
+  <div class="main_content">
+    <nav>
+      <ul class="flex-sa">
+        <li class="flex-1 nav " data-url="main_menu_kh" data-index="1" tapmode>
+          <div class="img">
+            <i class="fa fa-address-book fa-3x"></i>
+          </div>
+          <p> 业主列表 </p>
+        </li>
+        <li class="flex-1 nav" data-url="main_menu_dd" data-index="2" tapmode>
+          <div class="img">
+            <i class="fa fa-book fa-3x"></i>
+          </div>
+          <p>待装列表</p>
+        </li>
+        <li class="flex-1 nav" data-url="main_menu_bz" data-index="3" tapmode>
+          <div class="img">
+            <i class="fa fa-bookmark fa-3x"></i>
+          </div>
+          <p> 备忘提醒 </p>
+        </li>
+      </ul>
+    </nav>
+    <!-- 消zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz息轮播 -->
+    <div class="scroll-box">
+      <!-- 对消息轮播进行优化滚动ul，现实单行消息 -->
+      <span class="fa fa-volume-up"></span>
+      <ul>
+        <li>武汉洪山区南湖新村待装完成</li>
+        <li>江夏区江夏大道</li>
+        <li>汉口解放大道待装完成</li>
+      </ul>
+    </div>
+
+
+
+
+    <main>
+      <div class="aui-content ">
+        <ul class="aui-list aui-list-in ">
+          <li class="aui-list-item aui-list-item-middle   bounceInLeft" tapmode data-url="main_menu_addkh">
+            <!-- 增加钉子图标 -->
+            <div class="dz"></div>
+            <div class="img">
+              <i class="fa fa-users"></i>
+            </div>
+            <p class="aui-list-item-inner ">
+              添加业主信息
+            </p>
+          </li>
+          <li class="aui-list-item   bounceInRight" tapmode data-url="main_menu_adddd">
+            <div class="dz"></div>
+
+            <div class="img">
+
+              <i class="fa fa-pencil-square-o"></i>
+            </div>
+            <p class="aui-list-item-inner ">
+              添加待装
+            </p>
+          </li>
+          <li class="aui-list-item   bounceInLeft" tapmode data-url="main_menu_plankh">
+            <div class="dz"></div>
+
+            <div class="img">
+
+              <i class="fa fa-user-o"></i>
+            </div>
+            <p class=" aui-list-item-inner">
+              有意向装修业主
+            </p>
+          </li>
+          <li class="aui-list-item   bounceInRight" tapmode data-url="main_menu_cailiao">
+            <div class="dz"></div>
+
+            <div class="img">
+              <i class="fa fa-line-chart"></i>
+            </div>
+            <p class="aui-list-item-inner ">
+              原材料价格走势
+            </p>
+          </li>
+          <li class="aui-list-item   bounceInRight" tapmode data-url="main_menu_successed">
+            <div class="dz"></div>
+
+            <div class="img">
+              <i class="fa fa-tasks"></i>
+            </div>
+            <p class="aui-list-item-inner ">
+              成交案例
+            </p>
+          </li>
+          <li class="aui-list-item   bounceInRight" tapmode data-url="team_intru">
+            <div class="dz"></div>
+
+            <div class="img">
+              <i class="fa fa-american-sign-language-interpreting "></i>
+            </div>
+            <p class="aui-list-item-inner ">
+              装修团队
+            </p>
+          </li>
+        </ul>
+      </div>
+
+
+    </main>
+
+  </div>
+
+
+
+</body>
+<script src="../script/plugin/swiper.min.js" charset="utf-8"></script>
+<script src="../script/plugin/jquery.min.js" charset="utf-8"></script>
+<script src="../script/plugin/api.js" charset="utf-8"></script>
+<script src="../script/common.js"></script>
+<script src="../script/main_menu.js"></script>
+
+</html>

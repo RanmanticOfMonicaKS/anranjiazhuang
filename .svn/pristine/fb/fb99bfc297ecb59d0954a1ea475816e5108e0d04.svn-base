@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 我们页面中多个地方需要相同程序。   比如 求 1~100 的和
+        // for循环虽然能重复某些代码， 是非常有局限性的。
+        // 既然有很多的for 都需要大量重复 我们 有没有办法把for 多次使用呢
+        // 答案就是 函数  函数可以 把for 进行封装（打包）  下次使用直接调用就可以 特别想我们以前学过的 类选择器
+        // 函数 就是 封装了 一段 可被重复调用执行的 代码块
+
+
+        // var sum = 0;
+        // for (var i = 1; i <= 100; i++) {
+        //     sum += i;
+        // }
+        // var sum = 0;
+        // for (var i = 1; i <= 100; i++) {
+        //     sum += i;
+        // }
+
+        function fun() {
+            var sum = 0;
+            for (var i = 1; i <= 100; i++) {
+                sum += i;
+            }
+            console.log(sum);
+        }
+        fun();
+        fun();
+        fun();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

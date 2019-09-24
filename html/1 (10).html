@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1. do while 也是循环 也是重复执行某段代码
+        // 2. 语法规范
+        // do {
+        //     // 循环体 执行的代码
+        // } while (条件表达式)
+        // 3. 执行过程
+        // (1) 先执行do 里面的语句  再来进行判断 
+        // (2) 如果满足条件 true 则 继续执行 do 里面的语句 
+        // (3) 如果不满足条件 false 则 退出do while循环
+        // 4. 代码演示
+        var i = 1; // i 就是计数器
+        do {
+            console.log('hi');
+            i++; // 计数器自增
+        } while (i <= 10)
+        // 5. 注意点 和 总结 
+        // - do..while 循环和 while 循环非常像，二者经常可以相互替代，但 do..while 的特点是不管条件成不成立，都会执行一次。
+        // - do...while 语句就是先执行一遍，后面才根据 条件是否满足 决定执行次数；
+        // - 和 while 循环一样，在循环体内部，需要修改循环条件，否则会造成死循环。
+        var j = 5;
+        do {
+            console.log('hi');
+            j++;
+
+        } while (j <= 2)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

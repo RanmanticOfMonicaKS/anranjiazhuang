@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1. 后置自增  num++  让一个数每次自加1 
+        // 2. 后置自增和前置自增单独使用的时候是一样的
+        var num = 1;
+        num++;
+        console.log(num); // 2
+        // 3. 使用策略不一样
+        var age = 18;
+        console.log(age++); // 18  先 返回原值     后 自加
+        console.log(age);
+        // 4. 对比 前置和后置自增
+        var i = 1;
+        console.log(++i); // 2 先自加  后返回值
+
+        var j = 1;
+        console.log(j++); // 1 先 返回原值     后 自加
+        // 5. 小例子
+        var re = 10;
+        console.log(re++ + 10);
+
+        // 6 课堂测试
+
+        var a = 10;
+        ++a;
+        var b = ++a + 2;
+        console.log(b); //14
+
+        var c = 10;
+        c++;
+        var d = c++ + 2;
+        console.log(d); // 13
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

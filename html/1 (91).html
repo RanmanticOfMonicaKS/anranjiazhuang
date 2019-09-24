@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 数组的分割['你好', '小明', '你', '妹', '的']
+        var arr = ['你好', '小明', '你', '妹', '的'];
+        // 声明一个字符串变量
+        var str = '';
+        var sep = '|'
+            /*  所有的能对数组进行的操作，都是在于，利用for循环对数组进行的遍历
+             通过循环的进入累计操作，达到对整个数组操作的目的 */
+            // 对数组进行遍历
+        for (var i = 0; i < arr.length; i++) {
+            str += arr[i] + sep; //|称为分隔符
+
+        }
+        console.log(str);
+        // z这里的 ’|‘ 分隔符可以用一个变量标示
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

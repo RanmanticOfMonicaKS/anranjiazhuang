@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 要求：将数组中的元素转换为字符串，  用|或其他符号分割
+        // 比如  ['red', 'green', 'blue', 'pink']   输出结果为  'red|green|blue|pink|'
+        // 核心思路： 把数组里面的每个元素 进行字符串拼接  拼接的时候，多拼接一个 分隔符 | 
+        // 也得需要一个 字符串变量用来存储
+        var arr = ['red', 'green', 'blue', 'pink'];
+        var str = ''; // 用来输出结果的
+        var sep = ' ☆ '; // 分隔符变量 
+        for (var i = 0; i < arr.length; i++) {
+            str = str + arr[i] + sep;
+        }
+        console.log(str);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

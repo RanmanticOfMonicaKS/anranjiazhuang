@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 同样的筛选数组同样是需要做到一个遍历的，然后再for循环里，加入if条件
+        // 需求：筛选下面这个数组中，10的倍数，并重新组成一个新的数组
+        var arr = [10, 3, 20, 38, 23, 80, 90]
+            // 创建一个新的数组
+        var newArr = [];
+        // 声明一个变量用来表示数组的下标
+        var j = 0;
+        // 遍历原数组
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] % 10 == 0) {
+                newArr[j] = arr[i];
+                j++; // 这里的自增仅仅是表示下标的变化
+            }
+        }
+        console.log(newArr); //
+        /*    小技巧，依然如此，新的熟练下标可以直接用下边当前的长度表示
+           因为下标可以随着新的元素的加入，自行动态变化 */
+        console.log('----------------');
+        var arr = [10, 3, 20, 38, 23, 80, 90]
+            // 创建一个新的数组
+        var newArr = [];
+        // 声明一个变量用来表示数组的下标
+        // var j = 0;
+        // 遍历原数组
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i] % 10 == 0) {
+                newArr[newArr.length] = arr[i];
+                // j++;  这里的自增仅仅是表示下标的变化
+            }
+        }
+        console.log(newArr); //
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

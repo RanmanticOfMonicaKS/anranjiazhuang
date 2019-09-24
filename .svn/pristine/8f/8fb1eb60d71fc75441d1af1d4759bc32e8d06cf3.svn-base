@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1. 创建数组
+        var arr = ['瑞奇', '佩奇', '达芬奇'];
+        // 2. 使用数组 ： 数组名[下标]
+        // 数组元素： 就类似于HTML img a 网页元素  我们数组里面的数据（值）我们就成为数组元素
+        // 下标（索引）：因为数组里面的数据是有顺序的，我们给每个元素标注一个序号 是从 0开始的 依次增加
+        console.log(arr);
+        console.log(arr[1]); // 佩奇
+        console.log(arr[2]); // 达芬奇
+        // 3. 设置（修改）某个数据元素  找到这个元素然后从新赋值就阔以了
+        arr[2] = '尼古拉斯凯奇';
+        console.log(arr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

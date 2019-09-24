@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1. 函数不调用，自己不执行 （正常的函数）
+        // 2. 自执行函数 
+        function fn() {};
+        // fn 函数名    fn()  调用函数
+        console.log(fn); // 输出的是 整个函数 
+        console.log(fn()); // 输出的是 fn函数的返回值
+
+        // 3. 自执行函数的由来
+        function fn() {}
+        fn();
+        // fn ===  function() {}  数学的代入法 
+        (function() {
+            console.log('我是自执行函数');
+
+        })()
+        // 4 自执行函数的写法
+        (function() {})()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

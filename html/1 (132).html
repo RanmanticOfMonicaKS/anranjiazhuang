@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1. 函数的返回值
+        function back() {
+            return 666;
+        }
+        // console.log(back());
+        var result = back();
+        console.log(result);
+
+        // 2. 函数是可以作为返回值使用的
+        function backFn() {
+            return function() {
+                console.log('我是作为返回值使用滴');
+            }
+        }
+        var fn = backFn();
+        // var fn = function() {console.log('我是作为返回值使用滴');}
+        fn();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

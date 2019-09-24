@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 计数器自减也能达到计数器更新的效果的
+        for (var i = 5; i >= 1; i--) {
+            console.log('怀恋芬姐的第' + i + '天');
+
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

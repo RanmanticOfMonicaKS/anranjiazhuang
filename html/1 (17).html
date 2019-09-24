@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1. parseInt()   转换数值整型  
+        console.log(parseInt('123')); //  数值型的123
+        console.log(parseInt('123.65')); //  数值型的123  只能返回整数  不会四舍五入 直接切割
+        console.log(parseInt('123abc')); //  123  把字母去掉了 
+        console.log(parseInt('abc123abc')); //  NaN
+        // 2. parseFloat() 转换为数值型 浮点型 
+        console.log(parseFloat('123')); //  数值型的123
+        console.log(parseFloat('123.65')); //  数值型的123.65
+        console.log(parseFloat('123abc')); //  123  把字母去掉了 
+        console.log(parseFloat('123.56abc')); //  123.56  把字母去掉了 
+        console.log(parseFloat('abc123abc')); //  NaN
+        // 3. Number()  转换为数值型 (了解)
+        console.log(Number('123')); // 123
+        console.log(Number('123.56')); // 123.56 
+        console.log(Number('123.56abc')); // NaN 
+        console.log(Number(undefined)); // NaN
+        // 里面如果只要出现非数字字符或者undefined， 则就返回	 NaN
+        console.log('-----------------------------------');
+        // 如果该值是空字符串、数字0、或null、false   则返回 0      如果是 true  则返回 1 
+        console.log(Number('')); // 0
+        console.log(Number(null)); //0
+        console.log(Number(false)); //0
+        console.log(Number(true)); // 1
+        // 4. 隐式转换  隐秘的给我们转换了  js 算术运算 
+        console.log('123' - 0); // 123
+        console.log('123' * 1); // 123
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" href="../css/api.css">
+    <link rel="stylesheet" href="../css/aui.2.0.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <title>user</title>
+    <style>
+        .wrap {
+            /* background-color: #fff !important; */
+            background-image: linear-gradient(92deg, #59493f 0%, #dfc7af 100%);
+            color:#fff;
+        }
+
+        .aui-content {
+            height: 100%;
+        }
+
+        .aui-list {
+            height: 100%;
+        }
+
+        .aui-list .aui-list-item {
+            height: 25%;
+            background-image: linear-gradient(92deg, #59493f 0%, #dfc7af 100%);
+            animation: hue 20s infinite linear;
+            margin-bottom: 10px;
+            color:#fff;
+        }
+
+        .aui-list  .aui-list-item .aui-list-item-label
+         { /* WebKit browsers */
+            color:#fff;
+        }
+        .aui-list  .aui-list-item input::-webkit-input-placeholder {
+            color:#dfc7af;
+        }
+    </style>
+</head>
+
+<body class="wrap">
+    <div class="aui-content aui-margin-b-15">
+        <ul class="aui-list aui-form-list">
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        账号：
+                    </div>
+                    <div class="aui-list-item-input userName">
+                        1234
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        昵称
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="text" placeholder="不曾相识" class="nickName">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner aui-list-item-center aui-list-item-btn">
+                    <div class="aui-btn aui-btn-info aui-margin-r-5" tapmode onclick="submitUser()">提交</div>
+                    <div class="aui-btn aui-btn-danger aui-margin-l-5" tapmode onclick="closeFrame();">取消</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+<script type="text/javascript" src="../script/plugin/api.js"></script>
+<script type="text/javascript" src="../script/plugin/jquery.min.js"></script>
+<script type="text/javascript" src="../script/common.js"></script>
+<script src="../script/plugin/echarts.min.js"></script>
+<script src="../script/userInfo.js"></script>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 全局变量和局部变量注意点
+        var num = 10; // 全局变量
+        function fn() {
+            console.log(num);
+            num1 = 100; // 变量未声明直接使用的 也算是全局变量  不提倡
+            console.log(num1);
+
+        }
+        fn();
+        console.log(num1);
+
+        // 1. 在我们函数内部 变量未声明直接使用的 也算是全局变量
+        // 2. 我们知道函数有形参   它们属于局部变量
+        function fun(x, y) {
+            console.log(x);
+
+        }
+        fun(1, 2);
+        console.log(x); // x is not defined
+        // 3. 局部变量 写在函数内部  当我们函数执行完毕后，里面的局部变量就自动销毁。 释放内存空间，比较节约资源  我们更喜欢局部变量 
+        // 4. 全局变量  只有浏览器关闭的时候才会销毁。 比较浪费资源，我们不太提倡使用。
+        (function() {
+            var num = 10;
+
+            function fn() {}
+            fn();
+        })()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

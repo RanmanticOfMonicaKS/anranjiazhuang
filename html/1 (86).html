@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1. 变量  可以变化的量  里面的值是可以更换的。  变量里面，最终存放最后给的值 类似css层叠性
+        var uname = 'pink老师';
+        console.log(uname); //输出：pink老师
+
+        // 修改了变量的值
+        uname = '迪丽热巴';
+        console.log(uname); // 输出 变量不需要加引号
+
+
+        // 2. 同时声明变量  类似css 并集选择器  ,  
+        // 2.1用一个var 就可以了，但是必须逗号隔开
+        // 先声明3个变量
+        var uname, age, sex; //注意，同时声明的话，变量名和变量名之间打逗号！！！
+        // 再分别赋值
+        uname = 'pink老师';
+        age = 18;
+        sex = '男';
+
+        // 2.1同时声明3个变量并赋值
+        var uname = 'pink老师',
+            age = 18,
+            sex = '男';
+
+
+
+        // 3.声明变量和赋值的时候，注意的问题
+        var username;
+        console.log(username); // 声明变量 未赋值 结果是  undefined  未定义 
+        //console.log(userage);    //未声明变量 未给值 报错了
+        usersex = '女';
+        console.log(usersex); // 未声明的  给值了  女  不推荐使用 尽量避免
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>:

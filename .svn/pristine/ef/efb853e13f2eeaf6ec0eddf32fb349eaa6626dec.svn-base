@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" href="../css/aui.2.0.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <title>Document</title>
+    <style>
+        .wrap {
+            background-clip: #ccc;
+        }
+
+        nav {
+            position: relative;
+        }
+
+        .aui-searchbar input[type=search] {
+            padding-left: 10px;
+        }
+
+        /* 下拉刷新支撑板样式 后期改为拉环 */
+        .toTop {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 50px;
+            height: 50px;
+            background: url('../image/toTop.png') no-repeat;
+            z-index: 1;
+        }
+
+        /* main模板部分样式 */
+        main {
+            padding-top: 0.5rem;
+        }
+
+
+        /* main部分样式结束 */
+
+        /* 没有更多的加载模块 */
+    </style>
+</head>
+
+<body class="wrap">
+    <!-- 下拉刷新支持框 -->
+    <div class="toTop" tapmode onclick="toTop();">
+
+    </div>
+    <main>
+        <div class="tempList aui-list-item">
+            <!--       <ul>
+        <li class="temp_item">
+          <div class="temp_hd clearfix">
+            <span class="title aui-pull-left">业主详情</span>
+            <span class="edit aui-pull-right">编辑</span>
+          </div>
+          <div class="temp_bd">
+            <div class="kh_name_id">
+              <i class="fa fa-user-o"></i> 刘德华
+              <i class="fa fa-id-badge"></i> 5001
+            </div>
+            <div class="kh_address">
+              <i class="fa fa-map-marker"></i> 关山
+            </div>
+            <div class="kh_phone">
+              <i class="fa fa-phone"></i> 13888888888
+            </div>
+            <div class="fg_price">
+              (元/平方) ：1000
+            </div>
+          </div>
+        </li>
+      </ul>
+ -->
+            <!-- 添加提示没有了木块 -->
+
+        </div>
+    </main>
+
+</body>
+<script type="text/template" id="tempList">
+    <ul>
+      {{~ it.data.records:value:index}}
+      <li class="temp_item">
+          <div class="dz"></div>
+        <div class="temp_hd clearfix">
+          <span class="title aui-pull-left">业主详情</span>
+          <span class="edit aui-pull-right" data-index="{{= value.id}}" tapmode >编辑</span>
+        </div>
+        <div class="temp_bd">
+            <div class="kh_name_id">
+              <i class="fa fa-user-o"></i> {{= value.khname }}
+              <i class="fa fa-id-badge"></i> {{= value.khid}}
+            </div>
+            <div class="kh_address">
+              <i class="fa fa-map-marker"></i> {{= value.khaddress  }}
+            </div>
+            <div class="kh_phone">
+              <i class="fa fa-phone"></i>{{= value.khphone }}
+            </div>
+            <div class="fg_price">
+              (元/平方) ：{{= value.fgprice}}
+            </div>
+        </div>
+      </li>
+      {{~}}
+    </ul>
+  </script>
+<script src="../script/plugin/swiper.min.js" charset="utf-8"></script>
+<script src="../script/plugin/jquery.min.js" charset="utf-8"></script>
+<script src="../script/plugin/api.js" charset="utf-8"></script>
+<script src="../script/common.js"></script>
+<script src="../script/plugin/doT.min.js" charset="utf-8"></script>
+<script src="../script/kh_list_temp.js"></script>

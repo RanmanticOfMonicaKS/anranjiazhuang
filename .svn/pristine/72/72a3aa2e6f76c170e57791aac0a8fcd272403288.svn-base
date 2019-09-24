@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+  <link rel="stylesheet" type="text/css" href="../css/api.css" />
+  <link rel="stylesheet" href="../css/aui.2.0.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <title>Document</title>
+  <style>
+    nav {
+      position: relative;
+    }
+
+    .aui-searchbar input[type=search] {
+      padding-left: 10px;
+    }
+
+    /* main模板部分样式 */
+    main {
+      padding-top: 2.5rem;
+    }
+    .tempList {
+      padding: 0px 5px;
+    }
+    .temp_item {
+      background-color: #fff;
+      padding: 10px 20px 10px 20px;
+      margin-top: 0.5rem;
+      border-radius: 10px;
+      border: 2px solid #36D1A5;
+    }
+
+    .temp_item i {
+      margin: 10px;
+    }
+
+    .temp_item div {
+      margin-top: 10px;
+    }
+
+    .title,
+    .edit {
+      margin: 0 10px;
+    }
+
+    .temp_hd {
+      color: darkgreen;
+      font-weight: bold;
+    }
+
+    .temp_hd .edit {
+      padding: 2px 20px;
+      background-color: #36D1A5;
+      color: #fff;
+    }
+
+    /* main部分样式结束 */
+    .noMore {
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 5rem;
+            color:#fff;
+            text-align: center;
+            background-color:transparent;
+            line-height: 5rem;
+        }
+  </style>
+</head>
+
+<body class="wrap">
+  <header class="aui-bar aui-bar-nav">
+        <div class="aui-pull-left aui-btn" tapmode onclick="api.closeWin();">
+            <span class="fa fa-arrow-left"></span>
+        </div>
+        <div class="aui-title">业主列表</div>
+    </header>
+  <nav>
+    <!-- 查询业主部分 -->
+    <div class="aui-searchbar" id="search">
+      <div class="aui-searchbar-input aui-border-radius" tapmode onclick="doSearch()">
+        <i class="fa fa-search"></i>
+        <form action="javascript:doSearch();">
+          <input type="search" placeholder="业主编号或业主姓名" id="search-input">
+        </form>
+      </div>
+      <div class="aui-searchbar-cancel" tapmod>取消</div>
+    </div>
+  </nav>
+  <!-- NOTE: 主体内容部分 -->
+  <main>
+    <div class="tempList aui-list-item">
+<!--       <ul>
+        <li class="temp_item">
+          <div class="temp_hd clearfix">
+            <span class="title aui-pull-left">业主详情</span>
+            <span class="edit aui-pull-right">编辑</span>
+          </div>
+          <div class="temp_bd">
+            <div class="kh_name_id">
+              <i class="fa fa-user-o"></i> 刘德华
+              <i class="fa fa-id-badge"></i> 5001
+            </div>
+            <div class="kh_address">
+              <i class="fa fa-map-marker"></i> 关山
+            </div>
+            <div class="kh_phone">
+              <i class="fa fa-phone"></i> 13888888888
+            </div>
+            <div class="fg_price">
+              (元/平方) ：1000
+            </div>
+          </div>
+        </li>
+      </ul>
+ -->    </div>
+  </main>
+  <div class="noMore">
+    没有更多咯~~~~
+  </div>
+</body>
+<!-- <script type="text/template" id="tempList">
+  <ul>
+    {{~ it.data:value:index}}
+    <li class="temp_item">
+      <div class="temp_hd clearfix">
+        <span class="title aui-pull-left">业主详情</span>
+        <span class="edit aui-pull-right" >编辑</span>
+      </div>
+      <div class="temp_bd">
+          <div class="kh_name_id">
+            <i class="fa fa-user-o"></i> {{= value.khname }}
+            <i class="fa fa-id-badge"></i> {{= value.khid}}
+          </div>
+          <div class="kh_address">
+            <i class="fa fa-map-marker"></i> {{= value.khaddress  }}
+          </div>
+          <div class="kh_phone">
+            <i class="fa fa-phone"></i>{{= value.khphone }}
+          </div>
+          <div class="fg_price">
+            (元/平方) ：{{= value.fgprice}}
+          </div>
+      </div>
+    </li>
+    {{~}}
+  </ul>
+</script>
+ --><script src="../script/plugin/swiper.min.js" charset="utf-8"></script>
+<script src="../script/plugin/jquery.min.js" charset="utf-8"></script>
+<script src="../script/plugin/api.js" charset="utf-8"></script>
+<script src="../script/common.js"></script>
+<script src="../script/plugin/doT.min.js" charset="utf-8"></script>
+<script src="../script/main_menu_kh.js"></script>
+<script>
+
+$(".noMore").hide();
+  apiready = function () {
+    $api.fixStatusBar($api.dom('header'));
+    api.parseTapmode();
+    //给图标上色
+    toTemp();
+  }
+  //获取头部 和搜索部分的高度，封装打开一个展示数据的frame的方法
+  function toTemp() {
+    var headerH = $api.offset($api.dom('header')).h;
+    var searchH = $('#search').height();
+    console.log(JSON.stringify(searchH)+'----'+JSON.stringify(headerH));
+
+    api.openFrame({
+      name: 'main_menu_successed_temp',
+      url: 'main_menu_successed_temp.html',
+      bounces: true,
+      rect: {
+        x: 0,
+        y: headerH+searchH,
+        w: 'auto',
+        h: 'auto'
+      }
+    });
+  }
+
+  var searchBar = document.querySelector(".aui-searchbar-input");
+  if (searchBar) {
+    searchBar.onclick = function () {
+      document.querySelector(".aui-searchbar-cancel").style.marginRight = 0;
+    }
+  }
+  document.querySelector(".aui-searchbar-cancel").onclick = function () {
+    this.style.marginRight = "-" + this.offsetWidth + "px";
+    document.getElementById("search-input").value = '';
+    document.getElementById("search-input").blur();
+  }
+
+  function doSearch() {
+    console.log('666666666');
+
+    var searchValue = document.getElementById("search-input").value;
+    if (searchValue) {
+      // 点击获取筛选值
+      // alert("您输入的内容是:" + searchValue);
+      var obj = { khparam: searchValue};
+      obj  = JSON.stringify(obj);
+      // 执行筛选方法
+      api.execScript({
+        frameName: 'main_menu_successed_temp',
+        script:'singleKh('+ obj +');'
+      });
+      $('.noMore').hide();
+    }
+  }
+  // 展示分页数据的方法
+
+  //展示提示没有更多模块
+  function showNoMore() {
+    $(".noMore").show();
+  }
+  // 编辑按钮跳转，并携带id参数给编辑页面
+  function goToKhEdit() {
+  var index =   $(this).data('index');
+    api.openFrame({
+      name: 'updateKh',
+      url: 'updateKh.html',
+      bounces: false,
+      rect: {
+        x: 0,
+        y: 0,
+        w: 'auto',
+        h: 'auto'
+      },
+      pageParam:{ khId:index }
+    });
+  }
+</script>
+</html>

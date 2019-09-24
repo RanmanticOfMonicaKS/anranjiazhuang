@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 转义符的使用
+        var userName = '刘德华'
+        var str = 
+        ''+userName+'站在广州小蛮腰之上,\n忍不住大声喊道 :"论苍茫大地,谁主沉浮?"\n\'扑通\'一声,太激动,摔倒椅子了......'
+        // 这一段有引号时会影响浏览器的解析的
+        // 所以给这段文字加入转义符，使其正常显示，相当于html的特殊字符，
+        // 不方便写的字符，通过梁歪一些特殊字符来转化
+        console.log(str);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

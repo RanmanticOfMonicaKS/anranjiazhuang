@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" href="../css/api.css">
+    <link rel="stylesheet" href="../css/aui.2.0.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <title>user</title>
+    <style>
+        .wrap {
+            background-color: #fff;
+            height: 100%;
+        }
+
+        .user {
+            position: relative;
+            height: 40%;
+            background-color: #fff;
+            background: url('../image/user_bg.png') no-repeat;
+            background-size: cover;
+            top: -50px;
+        }
+
+        .touxiang {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 100px;
+            height: 100px;
+            background-color: #fff;
+            border-radius: 50%;
+            transform: translate(-50%, 30%);
+            background: #fff url('../image/login_logo.png') no-repeat center center;
+            background-size: 100px auto;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, .3);
+
+        }
+
+        .nic {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, 200%);
+            font-weight: 500;
+            font-size: 20px;
+        }
+
+        /* 曲线，遮盖圆 */
+
+        .circle {
+            position: absolute;
+            width: 50%;
+            height: 100px;
+            bottom: -50px;
+        }
+
+        .circle1 {
+            left: 0;
+            background-color: #eee;
+        }
+
+        .circle2 {
+            right: 0;
+            background-color: #36D1A5;
+        }
+
+        /* 主体部分的样式 */
+        main {
+            margin-top: 20px;
+        }
+
+        .aui-list {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            border-radius: 20px;
+        }
+
+        main .aui-list-item {
+            position: relative;
+            vertical-align: middle;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, .3);
+
+        }
+
+        ul.aui-form-list.aui-list::before,
+        .aui-list .aui-list-item.last::after,
+        ul.aui-form-list.aui-list::after {
+            display: none;
+        }
+
+        /* main .aui-list-item i::before {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            font-size: 25px;
+            transform: translate(0, -50%);
+        } */
+
+        .aui-list-item-label {
+            margin-left: 10px;
+        }
+
+        main .aui-list div {
+            margin-left: 40px;
+            border-bottom: 0;
+        }
+
+        .aui-list .aui-list-item-label {
+            margin-left: 2rem;
+        }
+
+        i.fa-user-o::before,
+        i.fa-key::before,
+        i.fa-sign-in::before,
+        i.fa-share::before {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            font-size: 25px;
+            transform: translate(0, -50%);
+            margin-right: 10px;
+        }
+        i.fa-share::before {
+            left: auto;
+            right: 20px;
+        }
+
+        .login {
+            position: absolute;
+            overflow: hidden;
+            bottom: 20%;
+            left: 2.5rem;
+            right: 2.5rem;
+            top: 40%;
+            background-color: #fff;
+            border: 2px solid #36D1A5;
+            border-radius: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, .3);
+        }
+
+        .aui-btn {
+            height: 80%;
+            width: 60%;
+            background: linear-gradient(to bottom,darkgreen,#36D1A5);
+            color: #fff;
+            min-height: 2.0rem;
+            font-size: 18px;
+            letter-spacing: .5em;
+            line-height: 2rem;
+            display: inline-block;
+        }
+        .aui-btn  i {
+            display: inline-block;
+        }
+        .aui-list .aui-list-item:after {
+            height: 2px;
+            background-color: #36D1A5;
+        }
+        input::-webkit-input-placeholder {
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body class="wrap">
+    <div class="user">
+        <div class="touxiang">
+        </div>
+        <!-- 登录部分 -->
+
+    </div>
+    <div class="login aui-content">
+        <ul class="aui-list aui-form-list">
+            <li class="aui-list-item">
+                <i class="fa fa-user-o"></i>
+                <div class="aui-list-item-label">
+                    工号：
+                </div>
+                <div class="aui-list-item-input">
+                    <input type="text" placeholder="" class="userName">
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <i class="fa fa-key"></i>
+                <div class="aui-list-item-label">
+                    密码：
+                </div>
+                <div class="aui-list-item-input">
+                    <input type="password" placeholder="由公司内部统一提供" class="userPwd">
+                </div>
+            </li>
+            <li class="aui-list-item last">
+                <i class="fa fa-sign-in"> </i>
+                <div class="aui-list-item-inner aui-list-item-center aui-list-item-btn">
+                    <div class="aui-btn " tapmode onclick="checkLogin();">登录</div>
+                </div>
+                <i class="fa fa-share" tapmode onclick="backtomain();"></i>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="../script/plugin/jquery.min.js" charset="utf-8"></script>
+<script src="../script/plugin/api.js" charset="utf-8"></script>
+<script src="../script/common.js"></script>
+<script src="../script/login.js"></script>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 案例1 
+        var num;
+        console.log(num); // undefined 声明变量未给值 
+        // 案例2 
+        var num1 = 10;
+        console.log(num1); // 10 
+        // 案例3 
+        console.log(num2); // undefined  想不明白  坑1 
+        var num2 = 20;
+        // 案例4 
+        fn();
+
+        function fn() {
+            console.log(11);
+
+        }
+
+        // 案例5 
+        fun(); // fun is not a function  坑2  想不明白
+        var fun = function() {
+            console.log(22);
+        }
+
+        // 我们js 代码通过 js 解释器（js 引擎） 来执行的。  js 解释器 来执行js 代码分为两步的： 首先预解析  再 代码执行 
+        // 1. 预解析
+        // (1) 首先把所有的 var  function  进行代码提升  提升到当前作用域的最前面。
+        // (2) 变量提升的是声明并不赋值，  函数 只提升声明 并不调用 
+        // 2. 代码执行
+        console.log(num2);
+        var num2 = 20;
+        // 相当于执行了以下代码：
+        var num2;
+        console.log(num2); // undefined
+        num2 = 20;
+
+        fun(); // 
+        var fun = function() {
+            console.log(22);
+        }
+
+        // 相当于执行了以下代码：
+        // var fun;
+        // fun();  // not a function
+        // fun = function() {}
+
+
+
+        var fun = function() {
+            console.log(22);
+        }
+        fun();
+
+        // 相当于执行了以下代码
+        var fun;
+        fun = function() {}
+        fun();
+
+
+
+        fn();
+
+        function fn() {
+            console.log(11);
+
+        }
+
+        // 相当于执行了以下代码
+        function fn() {}
+        fn();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

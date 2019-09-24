@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1. 算术运算符   +   -  *  /   %  
+        // 2. 算术表达式  --  有算术运算符组成的式子   一般情况下都有一个返回值 
+        console.log(3 + 5); // 8
+        console.log(10 - 2); // 8
+        console.log(3 * 5); // 15
+        console.log(10 / 2); // 5   得到的是 商  
+        console.log(10 % 2); //  0    % 取模  取余    得到的是 余数 
+        console.log(10 % 3); //  1   我们后面取余主要的目的  用来看看这个数是否能够被整除
+        // 3. 算术运算符 有 优先级   先算乘除 取余  后算 加减
+        console.log(1 + 2 * 3); // 7
+
+        // 扩展  符号问题
+        console.log('---------------------------');
+        console.log(10 / 2); // 5
+        console.log((-10) / (-2)); // 5
+
+        console.log(-10 / 2); // -5
+        console.log(10 / (-2)); // -5
+
+        /* 结论：如果是两个数相除，符号跟两个数都有关系：
+                 1、同正，或同负，其商为正，
+                 2、如果其中有一个数为负，商为负 */
+
+        console.log('---------------------------');
+        console.log(10 % 3); // 1
+        console.log((-10) % (-3)); // -1
+
+        console.log(-10 % 3); // -1
+        console.log(10 % (-3)); // 1
+
+        // 结论：如果是取模运算，结果的正负号，跟被除数有关（第一个数）
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

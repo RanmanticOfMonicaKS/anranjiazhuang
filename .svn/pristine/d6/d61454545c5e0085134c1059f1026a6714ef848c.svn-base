@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1. Boolean 布尔值   真  假 
+        console.log(true); // 真 
+        console.log(false); // 假
+        // 2. 字符型 
+        // (1).  带有引号的 都是 字符型    js 单引号和双引号是一样的  但是我们更提倡用 单引号
+        //  'andy'    "andy"   '123'  
+        console.log(123); // 数值型的123
+        console.log('123'); // 字符型的 123
+        // (2)  字符型需要添加引号，但是里面的内容，还可能加引号  采取措施 外双内单 或者  外单内双
+        var str = '我们都要做 高富帅的"程序猿"';
+        console.log(str);
+        // (3) 我们的变量一定不能加引号 。
+        var num = 10;
+        console.log(num); // 10
+        console.log('num'); // num
+    </script>
+</head>
+
+<body>
+    <img src="" alt=""> 文 &nbsp; 字
+</body>
+
+</html>

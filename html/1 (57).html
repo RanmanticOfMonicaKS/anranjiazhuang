@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1. 一些只需要一个操作数的运算符称为一元运算符   +5  -5   不同于  3 + 5  二元运算符
+        // 2. 怎么样让一个数自己加1  
+        var num = 1;
+        num = num + 1; //  1 + 1 = 2   js  里面 2 = 1 + 1  
+        num = num + 1;
+        console.log(num); // 3
+        // 3. 让一个数自己+1 我们可以简写  ++num  等价于   num = num + 1    我们成为 ++前置自增
+        var age = 18;
+        ++age; // ++age  等价于  age = age + 1 
+        console.log(age);
+        // 4. 小例子
+        var i = 10;
+        //console.log(++i);  11   先自加   后返回值 
+        console.log(++i + 10); // 21
+        // 5. 前置自增 只能用于变量自增
+        console.log(++18);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

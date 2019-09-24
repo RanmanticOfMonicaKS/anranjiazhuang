@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 也许需求： 用户输入数字几， 弹框提示星期几
+        // 1 先声明一个数组并赋值
+        var arr = ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期天', ]
+            //这里的逗号一定是英文模式的逗号
+            /*  数组的长度 等于 数据元素最大下标值 + 1
+             用来创建新的数据复制时， 正好可以用
+             newArr[newArr.length] = ''; */
+            // 输出arr的长度
+        console.log(arr.length);
+
+        // 用一个标量收集用户的输入的数字，并用做提取数组的下标
+        var i = prompt('您想输入星期几：');
+        alert('您要的是： ' + arr[i - 1])
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

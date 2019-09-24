@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        prompt('请输入您的年龄:');
+        // 用户提示输入框目的是为了收集 用户的信息  我们要把这个 18 保存起来。
+        // 为什么要用变量：  有些数据我们需要保存起来， 方便后面来使用  我们就可以用变量来做
+        // 变量是用来保存数据的  变量的本质就是一个 盒子 类似我们前面学的html 标签 
+        // 变量 就是用来保存数据的容器   变量是保存到内存里面的。
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

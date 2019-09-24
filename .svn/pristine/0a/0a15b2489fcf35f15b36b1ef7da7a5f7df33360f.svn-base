@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 翻转下列数组[5, 4, 3, 2, 1]
+        // 声明原数组
+        var arr = [5, 4, 3, 2, 1];
+        // 声明一个新数组
+        var newArr = [];
+        // 遍历原数组，并依次添加到新数组，但是从最后一个开始添加
+        for (var i = arr.length - 1; i >= 0; i--) {
+            newArr[newArr.length] = arr[i];
+        }
+        console.log(newArr); //(5) [1, 2, 3, 4, 5]
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

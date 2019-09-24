@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        for (var j = 1; j <= 100; j++) {
+            console.log('媳妇我错了');
+        }
+        // for循环可以重复执行某段代码
+        // for循环还可以重复不同的代码  主要是因为我们有 计数器 i 
+
+        // 求输出一个人1到100岁案例
+        // 这个岁数和 我们的计数器能对上  
+        for (var m = 1; m <= 100; m++) {
+            console.log('这个人今年' + m + '岁了');
+        }
+
+
+        // for 里面是可以添加其他语句的 
+        for (var i = 1; i <= 100; i++) {
+            if (i == 1) {
+                console.log('这个人今年1岁了， 它出生了');
+            } else if (i == 100) {
+                console.log('这个人今年100岁了，它死了');
+            } else {
+                console.log('这个人今年' + i + '岁了');
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

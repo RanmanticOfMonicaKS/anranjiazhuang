@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 我们js 的作用域：  全局作用域    局部作用域（函数作用域） 
+        // 其余语言里面有个 块级作用域   { }  就是块级作用域 
+        {
+            var num = 10; // 块级作用域 也属于 局部作用域
+        }
+        // 我们js 在es6 之前是只有函数作用域 没有块级作用域  但是  es6 新增了 块级作用域 
+
+        if (true) {
+            var num = 10;
+        }
+        console.log(num); // 在其他语言里面 比如 java 这样使用会报错的。 我们js 可以使用
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

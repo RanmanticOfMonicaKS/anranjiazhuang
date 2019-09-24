@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 需求，将下面数组数据从小到大排列 [5, 4, 3, 2, 1] ,目标排序[1, 2, 3, 4, 5]
+        // 1 第一种做法，前面颠倒的做法，因为两个顺序排列整齐，完整颠倒，找出其中规律，即可以达到排序颠倒的效果
+        // 首先声明原数据
+        var arr = [5, 4, 3, 2, 1];
+        // 下标设置为i
+        var i = 0;
+        // 声明新数组
+        var newArr = [];
+        // 下标设置为 j
+        var j = 0;
+        // 用i来表示新数组中数据的下标排，同样表达式为 length- i- 1
+        // 先遍历原数组，并给新数组赋值
+        while (i < arr.length) {
+            newArr[newArr.length] = arr[arr.length - i - 1];
+            i++; // 嘿嘿又差点忘了
+        }
+        console.log(newArr[0]); //1 确认完成排序
+        console.log(newArr); //[1, 2, 3, 4, 5]
+        // 2 方法 2
+        var arr = [5, 4, 3, 2, 1];
+        // var newArr = [];
+        // 更加通用的做法
+        /*  将数组元素arr[i]与arr[i+1]进行比较，若满足arr[i]>arr[i+1]这序号小的在前，
+         则将arr[i]的数值，赋值给arr[i+1]; */
+        // 这里讨论的是最大步数，如果排序不定，可能小于次步数
+        // 第一轮(arr[0])5个数，要把最大值，置于最右边需要步数最大需要4步
+        // 第二轮将arr[1];4，交换排序，需要最多3步
+        // 声明外部循环的计数器
+        for (var i = 0; i < arr.length - 1; i++) {
+            for (var j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    // 这里注意交换方法
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+
+                }
+            }
+        }
+        console.log(arr); //[1, 2, 3, 4, 5]
+        // 3 种，之间的比较法，可以，提出一个数组中的最大值，挑出最大值，放在最大下标位置，然后减少遍历个数，逐渐找出接下来的最大值，溢出排序，最后完成，从小打到排列
+        // 声明一个变量max ，并将arr[0]的赋值给max
+
+        // 不对，既然我是从小到大的排序，我为什么不直接找出最小值呢，然后挨个排序呢
+        // 创建一个新的数组准备手机，原数组中的值，并排序
+        var newArr = [];
+        var arr = [5, 4, 3, 2, 1];
+        // 声明一个变量储存原数组中的最小值
+        var min = arr[0];
+        for (var j = 0; j < arr.length - 1; j++) {
+            for (var i = j; i < = j; i++) {
+                if (min <= arr[i]) {
+                    newArr[newArr.length] = min
+                }
+            }
+        } //未完待续。。。。。。。。。。。。。。。。。。。。。。。
+
+        // 要讲所有数排列完成总共需要4轮
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .father {
+            color: red;
+        }
+        /* .son {
+            color: green;
+        } */
+    </style>
+    <script>
+        var num = 10;
+
+        function fn() {
+            var num = 20;
+            console.log(num); // 20
+
+        }
+        fn();
+        // 作用域链 ： 我们按照链式方式 去查找，最终决定我们变量执行那个值的过程（就近原则）
+        // function f1() {
+        //     function f2() {}
+        // }
+
+        // var num = 456;
+
+        // function f3() {
+        //     function f4() {}
+        // }
+
+        function f1() {
+            var num = 123;
+
+            function f2() {
+                console.log(num);
+            }
+            f2();
+        }
+        var num = 456;
+        f1();
+    </script>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son">我是什么颜色？</div>
+    </div>
+</body>
+
+</html>

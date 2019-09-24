@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        prompt('请输入您的年龄','88');
+        // prompt是弹出一个带有提示信息的输入框，用来收集用户输入的数据
+        // 变量就是为了用来收集这些数据，以便以后使用
+        // 步骤为 1 声明变量，在内存中申请一个容器的过程
+        var age = 18; 
+        // 声明了一个变量名叫age的变量，并给他赋值18，在内存中临时存储
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

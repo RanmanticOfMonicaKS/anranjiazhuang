@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 要求，翻转数组，将数组   ['red', 'green', 'blue', 'pink', 'purple'] 的内容 反过来存放。
+        // 1. 我们翻转数组 不涉及到 筛选  所以旧数组和新数组索引号都是连续的
+        // 2. 旧数组是输出方    新数组 是接受方
+        // 3. 新数组中的索引号 恰巧是  循环中的  i 
+        // 4. 旧数组中取元素的索引号   通过 数组长度 - i - 1 得出来的
+        // var arr = ['red', 'green', 'blue', 'pink', 'purple'];
+        var arr = [1, 2, 5, 10];
+        var newArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            newArr[i] = arr[arr.length - i - 1];
+        }
+        console.log(newArr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1. 弹出警示框  alert 警示 警惕  实际开发不太常用 用户体验不好  经常用来检测结果
+        alert('迪丽热巴');
+        // 2. 控制台打印 输出  console   控制台    log 日志  经常内部测试用的 程序猿看的
+        console.log('古丽扎娜');
+        // 3. 提示用户输入框  prompt 提示 
+        prompt('请输入您喜欢的明星:');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 业务需求： 1-100的和
+        // 先声明一个变量收集1-100的和
+        var sum = 0;
+        // 声明计数器
+        var i = 1;
+        // 进入while循环开始累加
+        while (i <= 100) {
+            sum += i;
+            i++;
+        }
+        console.log(sum); //5050
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 需求：求数组[2,34,5,6,6]中的最大值
+        // 声明原数组
+        var arr = [2, 34, 5, 6, 6];
+        // 声明一个变量存放最大值,假设为arr[0];
+        var max = arr[0];
+        // 遍历数组
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

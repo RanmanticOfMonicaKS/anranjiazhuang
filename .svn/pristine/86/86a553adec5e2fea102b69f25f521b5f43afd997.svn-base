@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // function getSum(num1, num2) {
+
+        // }
+        // console.log(getSum(1, 2, 3));
+
+        // 1. 当我们不确定用户到底输入多少个实参的时候，我们怎么办？
+        // 2. 我们可以通过arguments 来帮助我们确定用户输入了多少个实参。
+        // 3. arguments 它是用来存储用户传递过来的实参的。 不管用户传递多少，它都给你存储
+        // 4. 使用方法
+        function fn() {
+            console.log(arguments);
+        }
+        fn(1, 2, 3);
+        fn('pink', 12, 'blue', 33);
+        // 5. 注意点
+        // (1) 有了arguments 我们就可以不用写 形参了
+        // (2) arguments 按照一种 伪数组的形式存储的 
+        // (3) 伪数组  1. 有长度 length   2. 有索引号 3. 它没有数组的一些方法 push pop
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

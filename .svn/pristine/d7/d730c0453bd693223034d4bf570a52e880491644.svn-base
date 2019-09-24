@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 接收用户输入的分数
+        // 1. 接受用户数据
+        var score = prompt('请输入你的成绩');
+        // 2.判断
+        if (score >= 90) {
+            alert('宝贝，你是我的骄傲思密达');
+        } else if (score >= 80) {
+            alert('你已经很出色了');
+        } else if (score >= 60) {
+            alert('你的加油了');
+        } else {
+            alert('我不想和你说话，我只想用鞭子和你说话');
+        }
+        // 作业 
+        // 判断时间阶段的 比如   12  中午好   20 点 晚上好
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

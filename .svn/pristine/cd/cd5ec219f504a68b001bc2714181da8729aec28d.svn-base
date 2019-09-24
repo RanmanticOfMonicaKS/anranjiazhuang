@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 翻转下面数组['red', 'green', 'blue', 'pink', 'purple'];
+        // 翻转之后的数组['purple', 'pink', 'blue', 'green', 'red']
+        // 下标之间的关系分别是： 0 1 2 3 4   下标为i
+        // 核心就是要用i来表示下面新数组的下标
+        // 变为 ：4  3 2 1 0
+        //  一一对应，可以得出 下面新数组的下标为 4-i或者说arr.length -i -1;
+        var arr = ['red', 'green', 'blue', 'pink', 'purple'];
+        var newArr = []; // 先设置一个空的然后一个个，同上上一个数组的遍历，
+        // 已经下标之间的关系，进入逐个的追加
+
+        // 下面开始遍历数组
+
+        for (var i = 0; i < arr.length; i++) {
+            newArr[newArr.length] = arr[arr.length - i - 1];
+            // 这里的newArr[newArr.length]可以用i表示
+        }
+        console.log(newArr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

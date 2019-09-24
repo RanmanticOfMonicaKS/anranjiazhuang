@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" href="../css/api.css">
+    <link rel="stylesheet" href="../css/aui.2.0.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/common.css">
+
+    <title>user</title>
+    <style>
+        .wrap {
+            background-image: linear-gradient(92deg, #59493f 0%, #dfc7af 100%) !important;
+
+        }
+
+        .aui-content {
+            height: 100%;
+        }
+
+        .aui-list {
+            height: 100%;
+        }
+
+        .aui-list  .aui-list-item {
+            background-image: linear-gradient(92deg, #59493f 0%, #dfc7af 100%);
+            animation: hue 20s infinite linear;
+            margin-bottom: 10px;
+            height:12.5%;
+        }
+        .aui-list  .aui-list-item .aui-list-item-label
+         { /* WebKit browsers */
+            color:#fff;
+        }
+        .aui-list  .aui-list-item input::-webkit-input-placeholder {
+            color:#dfc7af;
+        }
+    </style>
+</head>
+
+<body class="wrap">
+    <div class="aui-content aui-margin-b-15">
+        <ul class="aui-list aui-form-list">
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        原密码：
+                    </div>
+                    <div class="aui-list-item-input ">
+                        <input type="password" placeholder="请输入原密码" class="pwd0">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        新密码：
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="password" placeholder="第一输入新密码" class="pwd1">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner">
+                    <div class="aui-list-item-label">
+                        新密码：
+                    </div>
+                    <div class="aui-list-item-input">
+                        <input type="password" placeholder="再次输入新密码" class="pwd2">
+                    </div>
+                </div>
+            </li>
+            <li class="aui-list-item">
+                <div class="aui-list-item-inner aui-list-item-center aui-list-item-btn">
+                    <div class="aui-btn aui-btn-info aui-margin-r-5" tapmode onclick="submitNewPwd()">提交</div>
+                    <div class="aui-btn aui-btn-danger aui-margin-l-5" tapmode onclick="closeFrame();">取消</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+<script type="text/javascript" src="../script/plugin/api.js"></script>
+<script type="text/javascript" src="../script/plugin/jquery.min.js"></script>
+<script type="text/javascript" src="../script/common.js"></script>
+<script src="../script/updatePwd.js"></script>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 需要，填写旗木卡卡西的身份信息
+        var userName = '旗木卡卡西',
+            age = 18,
+            address = '火影村';
+        console.log(userName+age+address);
+        prompt(userName+age+address) ;
+
+
+
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

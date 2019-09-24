@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 首先确定需求，注释标出。
+        // 需要交换2个变量的值，用代码表示
+        // 我先声明2个变量
+        var num1 = 20;
+        var num2 = 10;
+        // 这里的有几个问题，1，一个变量同时只能有一个数据
+                            // 2，逐行解析，不能同时交换
+        // 解决办法： 设置中间临时存储变量 temp 用来保存num1原来的数据
+        var temp = num1;
+        // 然后把num2的数据给num1,实现第一步交换
+            num1 = num2;
+        // 此时num1 和 num2 数据相同，下一步需求，num2赋值原来的num1的数据
+        // 而num1原来的数值就是temp现在的数据,所以：
+            num2 = temp;
+        // 完成数据交换，显示结果
+        console.log(num1);
+        console.log(num2);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

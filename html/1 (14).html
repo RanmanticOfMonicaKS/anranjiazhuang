@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1. switch 分支语句  还是做多个分支判断的 switch 开关   case  小案例 
+        // 2. 语法结构
+        // switch (变量) {
+        //     case 值1:
+        //         执行语句1;
+        //         break;
+        //     case 值2:
+        //         执行语句2;
+        //         break;
+        //     case 值3:
+        //         执行语句3;
+        //         break;
+        //     default:
+        //         最后执行的代码;
+        //         break;
+        // }
+        // 3. 执行原理
+        // switch 是根据变量里面的值  去和 我们的case 里面的值 相匹配
+        // 和某个case值如果匹配成功，则执行改case 里面 语句
+        // 执行语句的时候，如果有break 则退出整个的switch
+        // 执行语句的时候，如果没有break 则继续执行下一个case 
+        // 一般情况下，我们每个case的后面都跟有一个break
+        // 如果前面的case 都没有匹配上，则 执行default  （默认的）里面的语句 
+        // switch 括号里面可以跟表达式 但是实际开发里面，我们最常用的是变量
+        // 4. 案例演示 
+        var num = 3;
+        switch (num) {
+            case 1:
+                alert(1);
+                break;
+            case 2:
+                alert(2);
+                break;
+            case 3:
+                alert(3);
+                break;
+            default:
+                alert('没有结果');
+                break;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1 前置自增 ++ a
+        var a = 1;
+        ++ a ;
+        console.log(++a);//3
+        console.log(++a);//4
+        // 每出现一次++a a 的数值就会自行+1 ，不管是上线出现，还是同一个算式中出现多次，
+        // 例如  
+        var a = 1;
+        var b = ++a + ++a ;  //这里从左第一次运算时，a的数值就变成了2，后面第二个++a已经变成3了，
+        console.log(b);//5
+        var a = 1;
+        ++a;//这里a变成了2
+        var b = ++a + ++ a + ++a; //这里就是b = 3+4+5;
+        console.log(b);//12 
+        // 自减是完全相同的算法
+        // 后置自增和后置自减
+        var a = 1 ;
+        a++ ;//这里a变了2
+        b = a++ + a++ ; // 2+3
+        console.log(b);//5
+        var a = 1;
+        a++;// a=2
+        b = a++ + a++ + a++;// 2 +3 +4
+        console.log(b);//9
+        
+
+        
+
+        
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

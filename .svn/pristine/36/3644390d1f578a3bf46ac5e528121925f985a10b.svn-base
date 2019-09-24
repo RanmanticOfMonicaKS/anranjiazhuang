@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+  <link rel="stylesheet" href="../css/api.css">
+  <link rel="stylesheet" href="../css/aui.2.0.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/common.css">
+
+  <title>user</title>
+  <style>
+    .wrap {
+      background-color: #fff;
+    }
+
+    .user {
+      position: relative;
+      height: 40%;
+      background-color: #fff;
+      background: url('../image/user_bg.png') no-repeat;
+      background-size: cover;
+      top: -50px;
+    }
+
+    .touxiang {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 100px;
+      height: 100px;
+      background-color: #fff;
+      border-radius: 50%;
+      transform: translate(-50%, 30%);
+      background: #fff url('../image/touxaing.jpg') no-repeat center center;
+      background-size: 100px auto;
+    }
+
+    .nic {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 200%);
+      font-weight: 500;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    /* 曲线，遮盖圆 */
+
+    .circle {
+      position: absolute;
+      width: 50%;
+      height: 100px;
+      bottom: -50px;
+    }
+
+    .circle1 {
+      left: 0;
+      background-color: #eee;
+    }
+
+    .circle2 {
+      right: 0;
+      background-color: #36D1A5;
+    }
+
+    /* 主体部分的样式 */
+    /*  main {
+      margin-top: 20px;
+    }
+
+    main .aui-list-item {
+      position: relative;
+      border-bottom: 1px solid #eee;
+      height: 60px;
+    }
+
+    main .aui-list i {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      font-size: 25px;
+      transform: translate(0, -50%);
+    }
+
+    main .aui-list div {
+      margin-left: 40px;
+      border-bottom: 0;
+    } */
+    .main_content {
+      position: relative;
+      top: -10px;
+      background-image: linear-gradient(92deg, #59493f 0%, #dfc7af 100%);
+      padding: 10px 0px;
+    }
+
+    .aui-list:before,
+    .aui-list:after,
+    .aui-list-item:after,
+    .aui-list.aui-list-in .aui-list-item-inner:after {
+      display: none;
+    }
+
+    main {
+      margin-top: 20px;
+
+      /* background-color: #ccc; */
+      color: #fff;
+      position: relative;
+      z-index: 1;
+      /* padding-top: 10px; */
+      top: 20px;
+    }
+
+    .aui-list {
+      overflow: hidden;
+    }
+
+    main li .img {
+      position: absolute;
+      top: 50%;
+
+      font-size: 25px;
+      color: #fff;
+      transform: translate(0, -50%)
+    }
+
+    main .aui-list .aui-list-item {
+      margin: 0px 10px 10px 10px;
+    }
+
+    main li {
+      position: relative;
+      width: 100%;
+      height: 50px;
+      padding-top: 10px;
+      /* background-color: #ccc; */
+      text-align: center;
+      box-shadow: -2px -2px 0px #666;
+      border-radius: 10px;
+      margin-bottom: 5px;
+      /* background-image: linear-gradient(92deg, #f35626 0%, #feab3a 100%); */
+      background-image: linear-gradient(92deg, #59493f 0%, #dfc7af 100%);
+      animation: hue 20s infinite linear;
+    }
+
+    main li .dz {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #dfc7af;
+      box-shadow: -2px -2px 0px #666;
+    }
+
+    main li>p {
+      height: 100%;
+      padding-top: 10px;
+      font-size: 25px;
+      color: #fff;
+      text-indent: 3em;
+      line-height: 100%;
+    }
+  </style>
+</head>
+
+<body class="wrap">
+  <div class="user">
+    <div class="touxiang">
+    </div>
+    <div class="nic" tapmode onclick="getToLoign();">
+
+    </div>
+    <!--     <div class="circle1  circle">
+
+    </div>
+    <div class="circle2  circle">
+
+    </div>
+ -->
+  </div>
+  <!--   <main>
+    <div class="aui-content">
+      <ul class="aui-list aui-list-in">
+        <li class="aui-list-item userInfo" tapmode data-url="userInfo">
+          <i class="fa fa-pencil-square-o"></i>
+          <div class="">
+            个人信息
+          </div>
+        </li>
+        <li class="aui-list-item" tapmode data-url="updatePwd">
+          <i class="fa fa-yen"></i>
+          <div class="">
+            修改密码
+          </div>
+        </li>
+
+        <li class="aui-list-item aui-list-item-middle" tapmode data-url="login">
+          <i class="fa fa-user-o"></i>
+          <div class="">
+            切换账号
+          </div>
+        </li>
+      </ul>
+    </div>
+  </main> -->
+  <main>
+    <div class="aui-content ">
+      <ul class="aui-list aui-list-in ">
+         
+        <li class="aui-list-item aui-list-item-middle aui-pull-left userInfo" tapmode data-url="userInfo">
+          <!-- 增加钉子图标 -->
+          <div class="dz"></div>
+          <div class="img">
+            <i class="fa fa-users"></i>
+          </div>
+          <p class="aui-list-item-inner ">
+            个人信息
+          </p>
+        </li>
+        <li class="aui-list-item aui-pull-left updatePwd" tapmode data-url="updatePwd">
+          <div class="dz"></div>
+
+          <div class="img">
+
+            <i class="fa fa-pencil-square-o"></i>
+          </div>
+          <p class="aui-list-item-inner ">
+            修改密码
+          </p>
+        </li>
+        <li class="aui-list-item aui-pull-left login" tapmode data-url="login">
+          <div class="dz"></div>
+
+          <div class="img">
+
+            <i class="fa fa-user-o"></i>
+          </div>
+          <p class=" aui-list-item-inner">
+            切换账号
+          </p>
+        </li>
+      </ul>
+    </div>
+  </main>
+</body>
+<script type="text/javascript" src="../script/plugin/api.js"></script>
+<script type="text/javascript" src="../script/plugin/jquery.min.js"></script>
+<script type="text/javascript" src="../script/common.js"></script>
+<script src="../script/main_user.js"></script>
+
+
+</html>
+
+</html>

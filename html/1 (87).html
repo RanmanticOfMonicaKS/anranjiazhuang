@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 通过遍历数组，输出数组中的最大值
+        var arr = [1, 24, 32, 9, 0, 67];
+        // 声明一个最大值，先默认为arr[0]
+        var max = arr[0];
+        // 开始遍历数组，且逐个比较并，获取比max更大的值，并赋值给max
+        for (var i = 0; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i];
+            }
+        }
+        console.log(max); //67
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

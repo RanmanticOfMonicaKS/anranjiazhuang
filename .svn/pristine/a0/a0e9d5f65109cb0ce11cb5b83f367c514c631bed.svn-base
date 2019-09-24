@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1. 打印人的一生从1岁到100岁
+        var i = 1;
+        do {
+            console.log('我今年' + i + '岁了');
+            i++;
+        } while (i <= 100);
+
+
+        // 2. 计算 1 ~ 100 之间所有整数的和
+        var sum = 0;
+        var j = 1;
+        do {
+            sum += j;
+            j++;
+        } while (j <= 100);
+        console.log(sum);
+
+        // 3. 接收用户输入的用户名和密码，若用户名为 “admin” ,密码为 “123456” ,提示用户登录成功!  否则，让用户直到输入正确为止！
+        // 思路 如果用户名不是 admin 或者 密码 不是 123456 我们就不断的弹出对话框 循环  
+        // 如果用户名和 密码 正确我们就退出 do while 
+        do {
+            var userName = prompt('请输入用户名：');
+            var pwd = prompt('请输入密码：');
+        } while (userName != 'admin' || pwd != '123456');
+        alert('登录成功');
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

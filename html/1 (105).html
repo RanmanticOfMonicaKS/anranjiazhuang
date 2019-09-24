@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1. 给数组添加元素（其实我们叫做追加元素）
+        var arr = ['古丽扎娜', '迪丽热巴'];
+        // 能不能把 我们的佟丽丫丫 放到 这个数组里面呢？
+        // arr = ['佟丽丫丫'];   我们不能这样去添加数组元素 ，因为她会覆盖掉以前的数组元素
+        console.log(arr);
+        // 2.要追加元素需要借助 下标 
+        arr[2] = '佟丽丫丫'; // 如果这个下标没有，就算是追加 元素
+        console.log(arr);
+        // 3. 我们可以使用 length 增加数组的容量 
+        console.log(arr.length); // 3
+
+
+
+        /* arr.length = 5; // 修改了数组的长度 在原来3个基础上，又新增了2个空的空间
+        console.log(arr);
+        console.log(arr[3]); // 声明变量未给值 返回的结果就是  undefined
+        console.log(arr[4]); // 声明变量未给值 返回的结果就是  undefined */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

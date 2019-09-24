@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 分别声明，分别赋值
+        var userName ;
+            userName = 'andy';
+        var age ;
+            age = 18;
+        var sex ;
+            sex = '男';
+        // 分别输出
+        alert(userName);
+        alert(age);
+        alert(sex);
+        // 集体声明，分别赋值，分别输出，分号表示结尾，一点要看仔细，语句是否完整，今天错了一题
+        var userName = 'andy';
+            age = 18;
+            sex = '男';
+        console.log(userName);
+        console.log(age);
+        console.log(sex);
+        // 集体声明，集体赋值，分别输出
+        var userName = 'andy',
+            age = 18,
+            sex = '男';
+        prompt('请输入姓名','andy');
+        prompt('请输入年龄',18);
+        prompt('请输入性别', '男');
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        //需求：斐波拉契数列
+        // 1，1，2，3，5，8，13，21   求第9个数字是多少(可选)  斐波那契数列
+        // 1. 序列的规律  前面两项相加 正好等于第三项
+        // 1 + 1 = 2
+        // 1 + 2 = 3
+        // 2 + 3 = 5 ...
+        // 2. 这个序列要计算 需要 3个数参与运算  我们求的是 第三项 ，需要我们知道前面两项的结果
+        // 3. 我们要求的是 第9个数字，那我们需要知道 第 7个 和 第 8个 数子 
+        // 4. 借助于循环帮我们完成    整个序列前面2项是固定的都是1
+        function getFib(num) {
+            // num 里面存的9 是 个数 第 9个数的意思
+            var n1 = 1;
+            var n2 = 1;
+            return n3;
+            var n3;
+            for (var i = 3; i <= num; i++) {
+                n3 = n1 + n2;
+                // 循环的时候，每次进行一轮 那里面  n1 和 n2  前两项的值一定要发生变化
+                // 下一轮的 n1 等于上一轮的 n2   下一轮的n2  等于 上一轮的 n3
+                n1 = n2;
+                n2 = n3;
+            }
+
+        }
+        console.log(getFib(9));
+        console.log(getFib(6));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

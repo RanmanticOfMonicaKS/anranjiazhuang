@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" href="../css/aui.2.0.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <title>Document</title>
+    <style>
+        .wrap {
+            background-clip: #ccc;
+        }
+
+        nav {
+            position: relative;
+        }
+
+        .edit {
+            background-color: #ccc;
+        }
+
+        .aui-searchbar input[type=search] {
+            padding-left: 10px;
+        }
+
+        /* 下拉刷新支撑板样式 后期改为拉环 */
+        .toTop {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 50px;
+            height: 50px;
+            background: url('../image/toTop.png') no-repeat;
+            z-index: 1;
+        }
+
+        /* main模板部分样式 */
+        main {
+            padding-top: 0.5rem;
+        }
+
+
+        /* main部分样式结束 */
+
+        /* 没有更多的加载模块 */
+    </style>
+</head>
+
+<body class="wrap">
+    <!-- 下拉刷新支持框 -->
+    <div class="toTop" tapmode onclick="toTop();">
+
+    </div>
+    <main>
+        <div class="tempList aui-list-item">
+            <!--       <ul>
+        <li class="temp_item">
+          <div class="temp_hd clearfix">
+            <span class="title aui-pull-left">业主详情</span>
+            <span class="edit aui-pull-right">编辑</span>
+          </div>
+          <div class="temp_bd">
+            <div class="kh_name_id">
+              <i class="fa fa-user-o"></i> 刘德华
+              <i class="fa fa-id-badge"></i> 5001
+            </div>
+            <div class="kh_address">
+              <i class="fa fa-map-marker"></i> 关山
+            </div>
+            <div class="kh_phone">
+              <i class="fa fa-phone"></i> 13888888888
+            </div>
+            <div class="fg_price">
+              (元/平方) ：1000
+            </div>
+          </div>
+        </li>
+      </ul>
+ -->
+            <!-- 添加提示没有了木块 -->
+
+        </div>
+    </main>
+
+</body>
+<script type="text/template" id="tempList">
+    <ul>
+      {{~ it.data.records:value:index}}
+      <li class="temp_item">
+          <div class="dz"></div>
+        <div class="temp_hd clearfix">
+          <span class="title aui-pull-left">业主详情</span>
+          <span class="edit aui-pull-right" data-index="{{= value.id}}" tapmode >已完成</span>
+        </div>
+        <div class="temp_bd">
+            <div class="kh_name_id">
+              <i class="fa fa-user-o"></i> {{= value.khname }}
+              <i class="fa fa-id-badge"></i> {{= value.khid}}
+            </div>
+            <div class="kh_address">
+              <i class="fa fa-map-marker"></i> {{= value.khaddress  }}
+            </div>
+            <div class="kh_phone">
+              <i class="fa fa-phone"></i>{{= value.khphone }}
+            </div>
+            <div class="fg_price">
+              (元/平方) ：{{= value.fgprice}}
+            </div>
+        </div>
+      </li>
+      {{~}}
+    </ul>
+  </script>
+<script src="../script/plugin/swiper.min.js" charset="utf-8"></script>
+<script src="../script/plugin/jquery.min.js" charset="utf-8"></script>
+<script src="../script/plugin/api.js" charset="utf-8"></script>
+<script src="../script/common.js"></script>
+<script src="../script/plugin/doT.min.js" charset="utf-8"></script>
+<script>
+        var current_page = 0;
+    var pagesize = 3;
+    var maxPage;
+    var temp_data;
+
+    apiready = function () {
+        $(".noMore").hide();
+        // 第一次执行渲染模板，且得到最大页数
+        getAllData().then(tempData => temp_data = tempData);
+        showPageKh().then(tempData => {
+            gototem(tempData);
+            getMaxPage(tempData);
+        });
+        getMore();
+        editClick();
+        getDz();
+        // 这样优化是不行的，应该在页面还没有显示的时候请求，数据，否则编辑按钮出来之后，用户点击是无法拿到数据的
+    }
+    // 给所有edit注册点击事件
+    function editClick() {
+        $(".tempList").on('click', '.edit', function () {
+            var id = $(this).data('index');
+            console.log(JSON.stringify(temp_data) + '---' + JSON.stringify(id));
+
+            var pageParam = temp_data.filter(item => item.id == id); // [{ id:... }]
+            console.log(JSON.stringify(pageParam));
+            api.openFrame({
+                name: 'updateKh',
+                url: 'updateKh.html',
+                bounces: false,
+                rect: {
+                    x: 0,
+                    y: 0,
+                    w: 'auto',
+                    h: 'auto'
+                },
+                pageParam
+            });
+        })
+
+    }
+
+    // 获取用户id并跳转到编辑页面
+
+
+
+
+
+    // 更好的做法，显然是在单条数据筛选的时候，在前端做处理。
+    function getAllData() {
+        var promise = new Promise((resolve, reject) => {
+            api.ajax({
+                url: appA + 'api.do',
+                method: 'post',
+                timeout: 30,
+                dataType: 'json',
+                returnAll: false,
+                data: {
+                    body: {
+                        gb_name: 'queryBiz.list#ks02_getKhInfo_byCondition',
+                        param_info: {}
+                    }
+                }
+            }, function (ret, err) {
+                if (ret && ret.param_info) {
+                    temp_data = ret.param_info.records;
+                    temp_data = temp_data.filter( item => item.khstatus == 2 )
+                    console.log(JSON.stringify(temp_data));
+                    
+                    resolve(temp_data)
+                } else {
+                    api.alert({
+                        msg: ('错误码：' + err.code + '；错误信息：' + err.msg + '网络状态码：' + err
+                            .statusCode)
+                    });
+                    reject(err);
+                };
+            });
+
+        })
+        return promise;
+    }
+
+    function showPageKh() {
+        console.log('showAllKh');
+        // 拿到所有数据的方法
+        var promise = new Promise((resolve, reject) => {
+            api.ajax({
+                url: appA + 'api.do',
+                method: 'post',
+                timeout: 30,
+                dataType: 'json',
+                returnAll: false,
+                data: {
+                    body: {
+                        gb_name: 'queryBiz.page#ks02_getKhInfo_byCondition',
+                        param_info: {
+                            pagesize,
+                            current_page: ++current_page
+                        }
+                    }
+                }
+            }, function (ret, err) {
+                if (ret) {
+                    console.log(JSON.stringify(ret));
+                    var tempData = {
+                        data: ret.param_info
+                    };
+                    /*              var arrText = doT.template($("#tempList").text());
+                                    $(".tempList").append(arrText(temp_data));
+                                    // 渲染完毕，调用上色方法
+                                    getCol();
+                                    editRad(); // 圆角
+                                    //100ms之后再次渲染，避免渲染模板小号 不是这个问题 */
+
+                    resolve(tempData);
+                } else {
+                    // api.alert({
+                    //     msg: ('错误码：' + err.code + '；错误信息：' + err.msg + '网络状态码：' + err.statusCode)
+                    // });
+                    reject(err);
+                };
+            });
+        })
+        return promise;
+    }
+
+    function getMore() {
+        api.setRefreshHeaderInfo({
+            loadingImg: 'widget://image/refresh.png',
+            bgColor: '#36D1A5',
+            textColor: '#fff',
+            textDown: '下拉刷新...',
+            textUp: '松开刷新...'
+        }, function (ret, err) {
+            // 一开始下拉就要进行判断在执行后面的操作
+            console.log(JSON.stringify(current_page) + '----' + JSON.stringify(maxPage));
+            if (current_page + 1 >= maxPage) {
+                // 让父页面的没有更多模块显示
+                api.execScript({
+                    name: 'main_menu_kh',
+                    script: 'showNoMore();'
+                });
+                api.refreshHeaderLoadDone();
+                return;
+            }
+
+            showPageKh().then(tempData => {
+
+                console.log(JSON.stringify(tempData.data.total));
+
+                gototem(tempData);
+
+                api.refreshHeaderLoadDone();
+            })
+
+
+
+            //在这里从服务器加载数据，加载完成后调用api.refreshHeaderLoadDone()方法恢复组件到默认状态
+        });
+
+
+    }
+
+    // 生成模板的方法
+    function gototem(tempData) {
+        var arrText = doT.template($("#tempList").text());
+        $(".tempList").append(arrText(tempData));
+        // 渲染完毕，调用上色方法
+        getCol();
+        editRad(); // 圆角
+        getDz();
+        $('.edit').css({ 'background-color':"#ccc" })
+    }
+
+    //计算最大页数
+    function getMaxPage(tempData) {
+
+        maxPage = Math.ceil(tempData.data.total / pagesize);
+
+
+        // 这样会每次都重新请求计算，在调用的时候，显然不合适
+    }
+
+    function singleKh(khparam) {
+        console.log(JSON.stringify(khparam) + '---11111');
+
+        var param_info = Number(khparam.khparam) ? {
+            khId: Number(khparam.khparam)
+        } : {
+            khName: khparam.khparam
+        }
+        $('.tempList').empty();
+        api.showProgress({
+            title: ' 正在查询',
+            text: ' 请稍后',
+            modal: true
+        });
+
+        api.ajax({
+            url: appA + 'api.do',
+            method: 'post',
+            data: {
+                body: {
+                    gb_name: 'queryBiz.list#ks02_getKhInfo_byCondition',
+                    param_info
+                }
+            }
+        }, function (ret, err) {
+            if (ret) {
+                api.hideProgress();
+                var tempData = {
+                    data: ret.param_info
+                };
+                // 得到所有数据，在这边前端进行筛选把
+                if (tempData.data.count == 0) {
+                    return api.toast({
+                        msg: '未找到与 ' + khparam.khparam + ' 相关的搜索结果',
+                        duration: 2000,
+                        location: 'bottom'
+                    });
+                }
+                // 添加page避免后面模板页面报错
+                console.log(JSON.stringify(tempData));
+                gototem(tempData);
+            } else {
+                alert(err.status + err.message);
+            }
+        });
+    }
+    // totop
+    function toTop() {
+        document.body.scrollTop = 0;
+    }
+    // 给所有模板添加样式钉子
+    function getDz() {
+        $('temp_item').css({
+            "position": "absolute",
+            'top': '10px',
+            'right': '10px',
+            'width': '10px',
+            'height': '10px',
+            'border-radius': '50%',
+            'background-color': '#dfc7af',
+            '-webkit-box-shadow': '-2px -2px 0px #666'
+        })
+    }
+ 
+</script>

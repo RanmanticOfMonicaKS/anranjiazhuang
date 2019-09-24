@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*  先做一边，do放前面，后面紧跟循环体
+                然后再写while条件语句，同样计数器再循环中自加  */
+        var i = 0;
+        do {
+            console.log('先自己执行一次再说');
+            i++;
+
+        } while (i < 5)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

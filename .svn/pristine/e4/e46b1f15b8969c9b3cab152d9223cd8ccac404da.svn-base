@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 倒三角，row，col存在内部关联 row+col = 9
+        // 首先找出循环点，依然是小'⭐'，每一次内部循环的个顺，随着
+        //行数的即外部循环的次数，而逐渐减少。设外部循环为i
+        var str = '';
+        for (var i = 0; i < 9; i++) {
+            for (var j = 0; j < 9 - i; j++) {
+                str += '⭐';
+            }
+            str = str + '\n';
+        }
+        console.log(str);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

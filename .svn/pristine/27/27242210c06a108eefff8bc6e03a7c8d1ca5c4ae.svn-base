@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 数组
+        // 1. 我们为什么学习数组呢？ 
+        // 以前我们的变量只能存储一个值 。   假如我们班里面有 60个学生， 我需要把班里面每个同学的名字存储起来。
+        var uName = 'zs';
+        var name1 = 'zs';
+        var name2 = 'ls';
+        var name3 = 'ww';
+        // 我们想有木有一个存储形式，可以一下子存储多个 数据（值）呢 
+        // 答案就是 数组   数组里面可以存储多个值 。
+        // 2. 数组的作用
+        // 数组可以把一组数据存放到一起 ， 并且提供了非常方便的 访问 （获取）方式 
+        // 3. 数组的本质  就是 一组数据的集合  并且里面的数据是有序的。
+        // 4. 创建数组 
+        // (1) new Array()  创建数组 （了解）
+        var arr1 = new Array();
+        // new Array() 数组  我们把它赋值给了 一个变量 arr1   arr1 就是数组的名字
+        // 我们创建了一个空数组 
+        // (2) 使用数组字面量创建数组   8  'andy'  []
+        var arr2 = []; // 这是声明创建了一个空数组
+        var arr = [1, 2, 3, 4];
+        // 数组 可以使用一个变量名  就可以存储 多个值  
+        // 5. 数组里面的值是可以任意的数据类型
+        var arr3 = [1, 'andy', true];
+        // 里面多个值 一定用 英文下的 逗号 隔开思密达 。
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

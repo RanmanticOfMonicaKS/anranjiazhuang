@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" href="../css/aui.2.0.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <title>Document</title>
+    <style>
+        .wrap {
+            background-clip: #ccc;
+        }
+
+        nav {
+            position: relative;
+        }
+
+        .aui-searchbar input {
+            padding-left: 10px;
+        }
+
+        /* 下拉刷新支撑板样式 后期改为拉环 */
+        .toTop {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 50px;
+            height: 50px;
+            background: url('../image/toTop.png') no-repeat;
+            z-index: 1;
+        }
+
+        /* main模板部分样式 */
+        main {
+            padding-top: 0.5rem;
+        }
+
+        .tempList {
+            position: relative;
+            padding: 0px 5px;
+            background-color: #ccc;
+        }
+
+        .temp_item {
+            background-color: #fff;
+            padding: 10px 20px 10px 20px;
+            margin-bottom: 0.5rem;
+            border-radius: 10px;
+            border: 2px solid #36D1A5;
+        }
+
+        .temp_item i {
+            margin: 10px;
+        }
+
+        .temp_item div {
+            margin-bottom: 10px;
+        }
+
+        .title,
+        .edit {
+            margin: 0 10px;
+        }
+
+        .temp_hd {
+            color: darkgreen;
+            font-weight: bold;
+        }
+
+        .temp_hd .edit {
+            padding: 2px 20px;
+            background-color: #36D1A5;
+            color: #fff;
+        }
+
+        /* main部分样式结束 */
+
+        /* 没有更多的加载模块 */
+    </style>
+</head>
+
+<body class="wrap">
+    <!-- 回到顶部 -->
+    <div class="toTop" tapmode onclick="toTop();">
+
+    </div>
+    <main>
+        <div class="tempList aui-list-item">
+            <!--       <ul>
+        <li class="temp_item">
+          <div class="temp_hd clearfix">
+            <span class="title aui-pull-left">业主详情</span>
+            <span class="edit aui-pull-right">编辑</span>
+          </div>
+          <div class="temp_bd">
+            <div class="kh_name_id">
+              <i class="fa fa-user-o"></i> 刘德华
+              <i class="fa fa-id-badge"></i> 5001
+            </div>
+            <div class="kh_address">
+              <i class="fa fa-map-marker"></i> 关山
+            </div>
+            <div class="kh_phone">
+              <i class="fa fa-phone"></i> 13888888888
+            </div>
+            <div class="fg_price">
+              (元/平方) ：1000
+            </div>
+          </div>
+        </li>
+      </ul>
+ -->
+            <!-- 添加提示没有了木块 -->
+
+        </div>
+    </main>
+    <div class="hx1" style="display: none;">
+      <body>
+          <div class="system">
+              <div class="aside">
+                  <div class="profile">
+                      <div class="avatar img-circle">
+                          <img src="images/my_logo.jpg">
+                      </div>
+                      <h4>张学友</h4>
+                  </div>
+                  <div class="navs">
+                      <ul class="list-unstyled">
+                          <li>
+                              <a href="user.html">
+                                  <i class="fa fa-user"></i>
+                                  用户管理
+                              </a>
+                          </li>
+                          <li>
+                              <a href="javascript:;">
+                                  <i class="fa fa-bars"></i>
+                                  分类管理
+                                  <i class="fa fa-angle-right"></i>
+                              </a>
+                              <ul class="list-unstyled">
+                                  <li class="active">
+                                      <a href="category-first.html">一级分类管理</a>
+                                  </li>
+                                  <li>
+                                      <a href="category-second.html">二级分类管理</a>
+                                  </li>
+                              </ul>
+                          </li>
+                          <li>
+                              <a href="product.html">
+                                  <i class="fa fa-product-hunt"></i>
+                                  商品管理
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="main">
+                  <div class="header">
+                      <nav class="navbar navbar-custom">
+                          <div class="navbar-header">
+                              <a href="javascript:;" class="navbar-brand">
+                                  <i class="fa fa-navicon"></i>
+                              </a>
+                          </div>
+                          <ul class="nav navbar-nav navbar-right">
+                              <li>
+                                  <a href="javascript:;" class="login_out_bot">
+                                      <i class="fa fa-sign-out"></i> 退出
+                                  </a>
+                              </li>
+                          </ul>
+                      </nav>
+                  </div>
+                  <div class="body">
+                      <button class="operation btn btn-primary" data-toggle="modal" data-target=".category-first">添加分类</button>
+                      <table class="table table-bordered" id="categoryBox">
+                          
+                      </table>
+                      <div class="btn-group page">
+                          <div class="btn btn-default" id="prevBtn">上一页</div>
+                          <div class="btn btn-default" id="nextBtn">下一页</div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      
+          <div class="modal fade category-first">
+              <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+                          <h4 class="modal-title" id="myLargeModalLabel">添加分类</h4>
+                      </div>
+                      <div class="modal-body">
+                          <div class="form-group">
+                              <input type="text" class="form-control" placeholder="请输入分类的名称" id="categoryName">
+                          </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                          <button type="button" class="btn btn-primary" id="addCategory">保存</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+          <script id="categoryTpl" type="text/html">
+              <tr>
+                  <th>分类的编号</th>
+                  <th>分类名称</th>
+              </tr>
+              <% for(var i=0;i<data.rows.length;i++){ %>
+                  <tr>
+                      <td><%=data.rows[i].id %></td>
+                      <td><%=data.rows[i].categoryName %></td>
+                  </tr>
+              <% } %>
+          </script>
+      </body>
+  </div>
+</body>
+<script type="text/template" id="tempList">
+    <ul>
+            {{~ it.data.records:value:index}}
+            <li class="temp_item">
+              <div class="temp_hd clearfix">
+                <span class="title aui-pull-left">待装详情</span>
+                <span class="edit aui-pull-right" data-index="{{= value.id}}" tapmode >编辑</span>
+              </div>
+              <div class="temp_bd">
+                <div class="kh_name_id">
+                  <i class="fa fa-user-o"></i> {{= value.khname }}
+                  <i class="fa fa-phone"></i> {{= value.khphone}}
+                </div>
+                <div class="dd_id">
+                  <i class="fa fa-paper-plane"></i> {{= value.fgname}}
+                  <i class="fa fa-id-badge"></i> {{= value.ddid}}
+                </div>
+                <div class="kh_address">
+                  <i class="fa fa-bank"></i> {{= value.khaddress}}
+                </div>
+                <div class="useTime">
+                  <i class="fa fa-clock-o"></i> {{= value.usetime}} 个月
+                </div>
+              </div>
+            </li>
+            {{~}}
+          </ul>
+        </script>
+<script src="../script/plugin/swiper.min.js" charset="utf-8"></script>
+<script src="../script/plugin/jquery.min.js" charset="utf-8"></script>
+<script src="../script/plugin/api.js" charset="utf-8"></script>
+<script src="../script/common.js"></script>
+<script src="../script/plugin/doT.min.js" charset="utf-8"></script>
+<script src="../script/dd_list_temp.js"></script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1.比较运算符  >  <   >=   <=   ==   !=     ===    !==
+        // 2. 比较表达式    也会有一个返回值 （布尔值）  true  false 
+        console.log(3 > 5); // false
+        console.log(3 <= 5); // true 
+        console.log(10 == 10); // true
+        console.log(10 != 10); // false
+        console.log('10' == 10); // true  比较 值是否相等  == 隐式转换  会把 '10' 转换为数值型的 10
+        console.log(10 === 10); // true
+        console.log('10' === 10); // false  比较 要求 值 和 数据类型都一直才可以 返回true
+        // 3. =   ==  === 
+        var num = 10; // 单等 是赋值    把右边的值给左边 
+        console.log(num == 10); // 双等是判断    判断两侧的值是否一样
+        console.log(num === 10); // 三等是全等   要求 值 和 数据类型都一样
+
+
+
+        // 扩展   !=   !==
+        // !=  不等  只比较两个数的值，只要值不等，就认为成了 true
+        console.log('---------------------------');
+        console.log(10 != 10); // false
+        console.log(10 != 12); // true
+
+        // !==  不全等  值和类型中，至少有一个不等，就返回true
+        console.log('---------------------------');
+        console.log(10 !== 12); // true
+        console.log(10 !== '10'); // true
+        console.log(10 !== '12'); // true
+        console.log(10 !== 10); // false
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

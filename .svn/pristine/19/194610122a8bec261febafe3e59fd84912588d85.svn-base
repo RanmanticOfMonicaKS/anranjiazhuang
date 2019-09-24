@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 给数组['古力娜扎', '迪丽热巴'] 添加一个新的元 '佟丽丫丫'
+        // 给一个数组添加一个新的元素，一般是添加一个挨着的下一个顺序的下标的
+        // 例如
+        var arr = ['古力娜扎', '迪丽热巴'];
+        // 直接给出arr下一个下标序列的值
+        arr[2] = '佟丽丫丫';
+        // 输出，看是否添加成功
+        console.log(arr); //(3) ["古力娜扎", "迪丽热巴", "佟丽丫丫"]
+        // 添加完成，也可以在不知道数组有多少的情况下直接利用数组长度作为索引号，进行添加
+        arr[arr.length] = '刘诗诗吧'
+        console.log(arr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

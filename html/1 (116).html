@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 一行有三个星星
+        // var str = ''; // 空字符串
+        /* for (var i = 0; i < 3; i++) {
+            str = str + '☆';
+        }
+        for (var i = 0; i < 3; i++) {
+            str = str + '☆';
+        }
+        for (var i = 0; i < 3; i++) {
+            str = str + '☆';
+        } */
+        // console.log(str);
+
+
+
+        // 双重for 循环   循环嵌套 
+        // 使用规范
+        /* for (外循环的初始; 外循环的条件; 外循环的增量) {
+
+            for (内循环的初始; 内循环的条件; 内循环的增量) {
+
+                需执行的代码;
+            }
+
+        } */
+
+
+        // 代码演示
+        for (var i = 0; i < 3; i++) {
+            console.log('外层循环第' + i + '次');
+            for (var j = 0; j < 3; j++) {
+                console.log('里层的循环第' + j + '次');
+            }
+        }
+        // 外层循环执行一次，则内层循环要执行全部次数（跑完毕）。
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

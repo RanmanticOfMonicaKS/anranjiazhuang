@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 当我们不知道可能的实参，有多少，可以用，arguments来表示，
+        // 是一个为数组，包含所有的实参
+        // 有序号，有长度，但是不能进行数组pop push等操作
+        // 实例：
+        // 求任意几个数的和
+        // 不方便给具体的形参
+        function getSum() {
+            var sum = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+            return sum;
+        }
+        getSum(1, 6, 3, 2, 3); //
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

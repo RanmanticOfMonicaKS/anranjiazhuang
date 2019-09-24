@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" href="../css/aui.2.0.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+
+        .wrap {
+            background-clip: #ccc;
+        }
+
+        .aui-searchbar input {
+            padding-left: 10px;
+        }
+
+        /* 下拉刷新支撑板样式 后期改为拉环 */
+        .toTop {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 50px;
+            height: 50px;
+            background: url('../image/toTop.png') no-repeat;
+            z-index: 1;
+        }
+
+        /* main模板部分样式 */
+        main {
+            padding: 10px;
+            background-image: linear-gradient(92deg, #59493f 0%, #dfc7af 100%);
+        }
+        main p {
+            font-size: 22px;
+            text-indent: 2em;
+            color: #fff;
+
+        }
+
+        /* main部分样式结束 */
+
+        /* 没有更多的加载模块 */
+    </style>
+</head>
+
+<body class="wrap">
+    <header class="aui-bar aui-bar-nav">
+        <div class="aui-pull-left aui-btn" tapmode onclick="api.closeWin();">
+            <span class="fa fa-arrow-left"></span>
+        </div>
+        <div class="aui-title">团队介绍</div>
+    </header>
+    <!-- 回到顶部 -->
+
+    <!-- <div class="toTop" tapmode > -->
+    <main>
+        <div class="text">
+            <p>
+                    武汉更受欢迎的中高档装修品牌——澳华装饰，是一家集装饰设计、集成家居、材料配送、工程施工、售后服务等为一体的装修公司。
+
+                    公司拥有国家建设部设计甲级、施工一级资质。现有224支稳定的金牌金钻施工团队。我们有信心、有能力、有实力，1:1真实还原出您心中的理想舒适家园。
+        
+                    26年品牌沉淀，筑造雄厚设计实力。由100多位精英设计师组成的澳华设计团队，平均从业年龄都在10年以上，更多次荣获国际、国内各项设计大奖，兢兢业业、雕琢细节，用优异的成绩在业内赢得了"设计看澳华，金钻施工品质在澳华"的美誉。
+        
+                    深耕江城26年来，澳华装饰始终秉持标准精湛的施工工艺、认真负责的企业态度及"环保筑家"的绿色理念，脚踏实地、点滴汇聚，只为对得起自己的良心、不辜负您的信任。
+        
+                    "真诚、专业、服务、创新"是我们所信守的企业精神，坚持"以人为本"，为每一位业主量身定制，我们，始终在路上。或许荆棘遍布、或许前路漫漫，您的选择，始终将是照亮我们前行的那盏明灯…
+                
+            </p>
+        </div>
+    </main>
+</body>
+</div>
+</body>
+<script src="../script/plugin/jquery.min.js" charset="utf-8"></script>
+<script src="../script/plugin/api.js" charset="utf-8"></script>
+<script src="../script/common.js"></script>
+<script>
+    apiready = function () {
+     var headerH =   $api.fixStatusBar($api.dom('header'));
+        // 计算mian的高度
+
+        $('main').css({ "height":(api.winHeight-headerH -20)+'px' })
+    }
+</script>

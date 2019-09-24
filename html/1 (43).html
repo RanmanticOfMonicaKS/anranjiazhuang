@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 函数的返回值，通常用一个变量来存储，表示，求得
+        function getSum(num1, num2) {
+            res = num1 + num2; // 函数体，后面就是返回值
+            return res
+        }
+        getSum(10, 20);
+        console.log(getSum(10.20)); //30
+        /* 相当于给整个函数赋值，如果没有return ，getSum（）这个函数，不管内部有没有输入结果都是没有返回值的，return的租用就是给函数赋值 */
+        // 且返回值只有一个，虽然有可能输出多个值（数组），但是返回值还是一个
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

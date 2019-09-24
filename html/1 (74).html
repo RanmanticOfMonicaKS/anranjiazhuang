@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 也许需求： 求下面数组的和已经平均数[25, 50, 30, 20, 15, 35]
+        //  1 声明数组
+        var arr = [25, 50, 30, 20, 15, 35];
+        // 分别声明一个变量，用来存储数组的和，已经平均值
+        var sum = 0;
+        var average = 0;
+        // 遍历数组并求和
+        for (var i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        console.log(sum);
+
+        average = sum / arr.length;
+        // 弹出结果
+        alert('这个数组的和是：' + sum + '\n' + '这个数组的平均值是：' + average);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 浮点数 一般不用来比较，因为计算机存储方式的原因造成的一些结果不符预期
+        console.log(0.1+0.2);// 0.30000000000000004
+        console.log(0.2+0.3);//0.5
+        // 反正是有差异的，所以浮点数一般不去运算比较大小
+        // 数值型的范围
+        // 最大值为Number.Max_VALUE
+        console.log(Number.MAX_VALUE);//1.7976931348623157e+308  e的308次幂
+        // 最小值 Number.min_VALUE
+        console.log(Number.MIN_VALUE);//5e-324  e的负324次幂
+        console.log(Number.MAX_VALUE*2);//超出最大范围显示Infinity  ∞无穷大
+        console.log(-Number.MAX_VALUE*2);//超出最小范围显示-infinity -∞
+        // 非数值 NaN
+        console.log('卡卡西'-13);//当字符串和数值进行运算时NaN
+        // 用isNaN()函数来判断是否为一个非数值
+        // 如果是一个非数值，这返回true；
+        console.log(isNaN('字体')); //'字体'是一个字符串类型，所以返回 ture
+        console.log(isNaN(13));// 13是一个数值类型，所以返回 false
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

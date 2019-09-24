@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // if 语句加入了判断条件，满足条件即运行大括号里的程序，否则就不执行，单分支
+        // var age =  prompt('请输入您的年龄：');
+        //  if (age< 18) {
+        //      alert('快走吧，小屁孩，这里是强者的世界');
+        //  } else if(age>18 && age<40) {
+        //      alert('来啊快活啊');
+        //  } else if(age>=40) {
+        //      alert('您家孩子不在这里，您请回');
+        //  } else {
+        //      alert('我不知道您想干嘛');
+        //  }
+        // 三元表达式，if  else 3分支的简写
+        var age = prompt('您好请输入您的年龄：');
+         str = (age>=18)? '欢迎来到本网吧' : '快走吧小屁孩这是强者的世界';
+         alert(str);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var num;
+        // 1. 作用域  就是我们变量可以起作用的区域 范围  
+        // 2. js 的作用域 ： 全局作用域 （习大大）   局部作用域 （pink老师）
+        // (1) 全局作用域  提供了代码的运行环境 比如说 一个 script标签 在比如说一个独立js文件 
+        // (2) 局部作用域(函数作用域)  当我们声明一个函数的就是，就创建了一个局部作用域
+        function fn() {
+            var re;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

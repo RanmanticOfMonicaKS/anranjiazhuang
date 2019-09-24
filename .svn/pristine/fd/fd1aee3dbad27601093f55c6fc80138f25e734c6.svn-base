@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 要求：要求将数组  [2, 0, 6, 1, 77, 0, 52, 0, 25, 7]  大于等于 10的元素选出来 放入新数组
+        // 我们需要一个新数组 用于存放 筛选出来的元素
+        var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        /*      
+        var newArr = []; // 声明的新的空数组
+        var j = 0; // 计数器 新数组
+        for (var i = 0; i < arr.length; i++) { // 遍历旧数组
+            // i 代表的是 索引 下标   arr[i] 代表的是 数组元素
+            if (arr[i] >= 10) {
+                // console.log(arr[i]); // 满足条件的数组元素
+                // console.log(i); // i 就是满足条件的数组元素的索引 下标
+                newArr[j] = arr[i];
+                j++;
+            }
+        }
+        console.log(newArr); 
+        */
+
+        // 2. newArr.length  新数组的长度  动态变化的
+
+        var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+        var newArr = []; // 声明的新的空数组
+        console.log(newArr.length);
+
+        for (var i = 0; i < arr.length; i++) { // 遍历旧数组
+            // i 代表的是 索引 下标   arr[i] 代表的是 数组元素
+            if (arr[i] >= 10) {
+                // console.log(arr[i]); // 满足条件的数组元素
+                // console.log(i); // i 就是满足条件的数组元素的索引 下标
+                newArr[newArr.length] = arr[i];
+            }
+        }
+        console.log(newArr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

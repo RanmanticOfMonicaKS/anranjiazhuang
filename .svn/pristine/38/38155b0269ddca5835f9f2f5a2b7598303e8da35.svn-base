@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 交换两个变量的值，用一个中间变量来过渡，用来存储其中一个变量的值，不至于被覆盖
+        var num1 = 10;
+        var num2 = 20;
+        // 声明一个过渡变量
+        var temp = 0;
+        // 把num1的值赋值给temp进行存储
+        temp = num1;
+        // 然后把num2的值赋值给num1 ,此时num1存储的就是num2的值
+        num1 = num2;
+        // 再把此时的temp的值赋值给num2 ，完成交换
+        num2 = temp;
+        console.log(num1); //20
+        console.log(num2); //10
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

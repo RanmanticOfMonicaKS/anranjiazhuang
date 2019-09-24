@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 打印九九乘法表
+
+        var str = '';
+        // (1) 外层循环控制 行数
+        for (var i = 1; i <= 9; i++) {
+            // (2) 里面的循环控制 列数   九九乘法表列数恰巧等于行数 
+            for (var j = 1; j <= i; j++) {
+                // 2 × 3 = 6
+                str += j + '×' + i + '=' + i * j + '\t';
+            }
+            str = str + '\n';
+        }
+        console.log(str);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

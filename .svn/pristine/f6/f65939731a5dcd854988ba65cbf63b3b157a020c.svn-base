@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1.以前重复某些代码， 我们只能复制粘贴
+        // console.log('媳妇我错了');
+        // console.log('媳妇我错了');
+        // console.log('媳妇我错了');
+        // 2. 循环可以重复执行某段代码 
+        // 3. for循环 语法结构 
+        // for (初始化变量; 条件表达式; 自增表达式) {
+        //     // 重复执行的代码;
+        // }
+        // 4. 执行思路
+        // for 重复执行某段代码 执行代码 n多次  我们需要一个计数器来记录次数
+        // 初始化变量   刚开始初始化 计数器的次数  这句话在循环里面只执行一次 
+        // 条件表达式   计数器的总次数  如果满足条件就执行重复代码 不满足条件，就退出循环
+        // 自增表达式   计数器的自增  
+        // 5. 代码演示
+        for (var i = 1; i <= 10; i++) {
+            console.log('媳妇我错了');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

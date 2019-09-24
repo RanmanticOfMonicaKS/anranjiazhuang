@@ -1,0 +1,411 @@
+var frames = [{
+    name: 'main_menu',
+    url: './main_menu.html',
+    bgColor: '#ccc',
+    pageParam: footerH
+}, {
+    name: 'table',
+    url: './main_table.html',
+    bgColor: '#ccc'
+}, {
+    name: 'fg',
+    url: './main_fg.html',
+    bgColor: '#fff'
+}, {
+    name: 'user',
+    url: './main_user.html',
+    bgColor: '#fff'
+}];
+
+// 监听事件 依赖记录id 在切换用户时，能够正确的设置aui.active
+var footerH = $api.offset($api.dom('.footer')).h;
+// console.log(JSON.stringify(footerH));
+apiready = function () {
+    if (api.deviceModel == 'iphone10,3') {
+        $api.fixTabBar($api.dom('.footer'));
+        // 监听身份，进行 相关权限处理
+    }
+    // 重新上遮盖  非常几把坑的一点 ，就是发送执行代码只能在  frame中去完成，并不能在framegroup完成
+    api.sendEvent({
+        name: 'getMask',
+        extra: {key:' value'}
+    });
+
+    toFrame();
+    //  页面没打开的时候获取不到
+    // api.addEventListener({
+    //     name: 'checkStatusF'
+    // }, function (ret, err) {
+    //     console.log('___________'+JSON.stringify(ret));
+    //     if (ret.statusF == 0 || 1) {
+    //         $('.leader').hide();
+    //         frames.splice(1, 1);
+    //     }
+    // });
+
+    // 设置状态栏
+    api.setStatusBarStyle({
+        style: 'light',
+        color: '#36D1A5'
+    });
+    // 打开frame组
+    toFrameGroup();
+    setIndex()
+
+}
+// 打开frameGroup的方法
+function toFrameGroup() {
+    api.openFrameGroup({
+        name: 'mainGroup',
+        background: '#fff',
+        scrollEnabled: true,
+        rect: {
+            x: 0,
+            y: 0,
+            w: 'auto',
+            marginBottom: footerH
+        },
+        index: 0,
+        frames: frames
+    }, function (ret, err) {
+        if (ret) {
+            var index = ret.index;
+            var statusF = JSON.parse($api.getStorage('userInfo')).userstatus;
+
+            console.log(JSON.stringify(index) + '---------'+JSON.stringify(statusF));
+            // 是在没办法我要用localStorage额
+            if (index == 1 && statusF != 2) {
+                api.confirm({
+                    title: '该账号不具备查看报表的权限',
+                    msg: '是否切换账号？',
+                    buttons: ['确定', '取消']
+                }, function (ret, err) {
+
+                    if (ret.buttonIndex == 1) {
+                        api.openFrame({
+                            name: 'login',
+                            url: 'login.html',
+                            bounces: false,
+                            reload:true
+                        });
+                        
+                    }
+                    if (ret.buttonIndex == 2) {
+                        api.setFrameGroupIndex({
+                            name: 'mainGroup',
+                            index: 0,
+                            scroll: true
+                        });
+                    }
+                    $('.aui-bar-tab-item').eq(0).addClass('aui-active').siblings().removeClass('aui-active');
+                    index = 0;
+                    $api.setStorage('FranemGroupIndex', 0);
+
+                });
+            }
+            if(index ==1 && statusF == 2) {
+                api.sendEvent({
+                    name: 'checkMan',
+                    extra: {key:' value'}
+                });
+            }
+            $api.setStorage('FranemGroupIndex', index);
+
+            $('.aui-bar-tab-item').eq(index).addClass('aui-active').siblings().removeClass('aui-active');
+            clearCa();
+            api.sendEvent({
+                name: 'id',
+                extra: index
+            });
+            console.log(api.frameName);
+
+            // 切换时，要关闭main_user 页面中的几个弹出frame  切换的时候 取消动画 取消不掉，怎么打开的，关闭时就必定会有动画
+            api.setFrameAttr({
+                name: 'updatePwd',
+                rect: {
+                    x: 0,
+                    y: 0,
+                    w: 320,
+                    h: 0
+                },
+                hidden: false
+            });
+
+
+
+
+            var frames = api.frames();
+            console.log(JSON.stringify(frames));
+
+        } else {
+            console.log(JSON.stringify(err));
+        }
+    });
+
+}
+
+// 定义点击tab的时候跳转到响应的frame
+function toFrame() {
+    $('.aui-bar-tab-item').on('click', function () {
+        var index = $(this).index();
+        console.log(JSON.stringify(index));
+
+        api.setFrameGroupIndex({
+            name: 'mainGroup',
+            index: index,
+            scroll: true
+        });
+        //底部tab对应高亮
+        $(this).addClass('aui-active').siblings().removeClass('aui-active');
+    })
+}
+// 监听切换frame事件，并关闭calender
+function clearCa() {
+    api.closeFrame({
+        name: 'main_menu_bz'
+    });
+}
+
+// 监听，frameGroup中的index
+function setIndex() {
+    console.log('我重新加载了！！！！！');
+    // 这里直接让 uer页面也同步
+    api.sendEvent({
+        name: 'sameTheNic',
+        extra: '球球你同步吧'
+    });
+    var index = $api.getStorage('FranemGroupIndex');
+    $('.aui-bar-tab-item').eq(index).addClass('aui-active').siblings().removeClass('aui-active');
+
+}
+
+// 不用说了，你开始了
+function div19() {
+    var a = {
+        multiply: function (v, w) {
+
+            if (w !== undefined) {
+
+                console.warn('THREE.Vector3: .multiply() now only accepts one argument. Use .multiplyVectors( a, b ) instead.');
+                return this.multiplyVectors(v, w);
+
+            }
+
+            this.x *= v.x;
+            this.y *= v.y;
+            this.z *= v.z;
+
+            return this;
+
+        },
+
+        multiplyScalar: function (scalar) {
+
+            this.x *= scalar;
+            this.y *= scalar;
+            this.z *= scalar;
+
+            return this;
+
+        },
+
+        multiplyVectors: function (a, b) {
+
+            this.x = a.x * b.x;
+            this.y = a.y * b.y;
+            this.z = a.z * b.z;
+
+            return this;
+
+        },
+
+        applyEuler: function () {
+
+            var quaternion = new Quaternion();
+
+            return function applyEuler(euler) {
+
+                if (!(euler && euler.isEuler)) {
+
+                    console.error('THREE.Vector3: .applyEuler() now expects an Euler rotation rather than a Vector3 and order.');
+
+                }
+
+                return this.applyQuaternion(quaternion.setFromEuler(euler));
+
+            };
+
+        },
+
+        applyAxisAngle: function () {
+
+            var quaternion = new Quaternion();
+
+            return function applyAxisAngle(axis, angle) {
+
+                return this.applyQuaternion(quaternion.setFromAxisAngle(axis, angle));
+
+            };
+
+        },
+
+        applyMatrix3: function (m) {
+
+            var x = this.x,
+                y = this.y,
+                z = this.z;
+            var e = m.elements;
+
+            this.x = e[0] * x + e[3] * y + e[6] * z;
+            this.y = e[1] * x + e[4] * y + e[7] * z;
+            this.z = e[2] * x + e[5] * y + e[8] * z;
+
+            return this;
+
+        },
+
+        applyMatrix4: function (m) {
+
+            var x = this.x,
+                y = this.y,
+                z = this.z;
+            var e = m.elements;
+
+            var w = 1 / (e[3] * x + e[7] * y + e[11] * z + e[15]);
+
+            this.x = (e[0] * x + e[4] * y + e[8] * z + e[12]) * w;
+            this.y = (e[1] * x + e[5] * y + e[9] * z + e[13]) * w;
+            this.z = (e[2] * x + e[6] * y + e[10] * z + e[14]) * w;
+
+            return this;
+
+        },
+
+        applyQuaternion: function (q) {
+
+            var x = this.x,
+                y = this.y,
+                z = this.z;
+            var qx = q.x,
+                qy = q.y,
+                qz = q.z,
+                qw = q.w;
+
+            // calculate quat * vector
+
+            var ix = qw * x + qy * z - qz * y;
+            var iy = qw * y + qz * x - qx * z;
+            var iz = qw * z + qx * y - qy * x;
+            var iw = -qx * x - qy * y - qz * z;
+
+            // calculate result * inverse quat
+
+            this.x = ix * qw + iw * -qx + iy * -qz - iz * -qy;
+            this.y = iy * qw + iw * -qy + iz * -qx - ix * -qz;
+            this.z = iz * qw + iw * -qz + ix * -qy - iy * -qx;
+
+            return this;
+
+        },
+
+        project: function (camera) {
+
+            return this.applyMatrix4(camera.matrixWorldInverse).applyMatrix4(camera.projectionMatrix);
+
+        },
+        unproject: function (camera) {
+
+            return this.applyMatrix4(camera.projectionMatrixInverse).applyMatrix4(camera.matrixWorld);
+
+        },
+
+        transformDirection: function (m) {
+
+            // input: THREE.Matrix4 affine matrix
+            // vector interpreted as a direction
+
+            var x = this.x,
+                y = this.y,
+                z = this.z;
+            var e = m.elements;
+
+            this.x = e[0] * x + e[4] * y + e[8] * z;
+            this.y = e[1] * x + e[5] * y + e[9] * z;
+            this.z = e[2] * x + e[6] * y + e[10] * z;
+
+            return this.normalize();
+
+        },
+
+        divide: function (v) {
+
+            this.x /= v.x;
+            this.y /= v.y;
+            this.z /= v.z;
+
+            return this;
+
+        },
+        divideScalar: function (scalar) {
+
+            return this.multiplyScalar(1 / scalar);
+
+        },
+
+        min: function (v) {
+
+            this.x = Math.min(this.x, v.x);
+            this.y = Math.min(this.y, v.y);
+            this.z = Math.min(this.z, v.z);
+
+            return this;
+
+        },
+
+        max: function (v) {
+
+            this.x = Math.max(this.x, v.x);
+            this.y = Math.max(this.y, v.y);
+            this.z = Math.max(this.z, v.z);
+
+            return this;
+
+        },
+
+        clamp: function (min, max) {
+
+            // assumes min < max, componentwise
+
+            this.x = Math.max(min.x, Math.min(max.x, this.x));
+            this.y = Math.max(min.y, Math.min(max.y, this.y));
+            this.z = Math.max(min.z, Math.min(max.z, this.z));
+
+            return this;
+
+        },
+
+        clampScalar: function (minVal, maxVal) {
+
+            this.x = Math.max(minVal, Math.min(maxVal, this.x));
+            this.y = Math.max(minVal, Math.min(maxVal, this.y));
+            this.z = Math.max(minVal, Math.min(maxVal, this.z));
+
+            return this;
+
+        }
+
+    }
+}
+
+// 权限控制，判断角色， 
+
+function checkStatusF() {
+    // 跳转页面回0
+   
+        api.setFrameGroupIndex({
+            name: 'mainGroup',
+            index: 0,
+            scroll: true
+        });    
+
+}

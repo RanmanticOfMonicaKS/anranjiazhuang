@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+  <link rel="stylesheet" href="../css/api.css">
+  <link rel="stylesheet" href="../css/aui.2.0.css">
+  <link rel="stylesheet" href="../css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <title>Document</title>
+	<style>
+      body {
+        background-color: #fff;
+      }
+      #mian {
+        position: relative;
+      }
+      #main .chartc {
+        width: 100%;
+        background-color: #fff;
+        background-color: #eee;
+        position: fixed;
+      }
+      #chart1 {
+        top: 0;
+      }
+      #chart2 {
+        top:-300px
+      }
+      .btn_item {
+        position: absolute;
+        width: 40%;
+        height:100px;
+        left:50%;
+        border-radius: 50%;
+        transform: translate(-50%,0);
+        box-shadow: 0px 0px 15px rgba(255, 255, 255);
+      }
+      .xl.btn_item {
+        background-color:#36D1A5;
+        top:60%;
+        color:#eedd78;
+      }
+      .kh.btn_item {
+        background-color: #7289ab;
+        top: 80%;
+        color:#36D1A5;
+      }
+      .btn_item .text {
+        left: 50%;
+        top: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        font-size:18px;
+      }
+      /* 遮盖  */
+      .mask {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,.8);
+        z-index: 999;
+      }
+    </style>
+  </head>
+
+  <body class="wrap">
+
+      <header class="aui-bar aui-bar-nav">
+            <div class="aui-title">统计报表</div>
+        </header>
+        <!-- 遮盖， -->
+        <div class="mask">
+
+        </div>
+        <!-- hx -->
+        <div class="hx44" style="display: none;">
+          <body>
+          <header class="mui-bar mui-bar-nav">
+            <a id="icon-menu" class="mui-action-menu mui-icon mui-icon-bars mui-pull-left"></a>
+            <a class="mui-action-back mui-btn mui-btn-link mui-pull-right">关闭</a>
+            <h1 class="mui-title">div模式下拉菜单</h1>
+          </header>
+          <div class="mui-content">
+            <div class="mui-content-padded" >
+              <p>这是div模式下沉菜单示例，主页面和菜单在一个HTML文件中，
+                
+                当前页面为主界面，你可以在主界面放置任何内容；
+                 打开侧滑菜单有多种方式：  1、点击页面左上角的
+                <span class="mui-icon mui-icon-bars"></span> 图标；
+                 2、通过JS API触发（例如点击如下蓝色按钮体验）；
+                 <span class="android-only">3、Android手机按menu键；</span>
+              </p>
+              <p style="padding: 5px 20px;margin-bottom: 5px;">
+                <button id="menu-btn" type="button" class="mui-btn mui-btn-primary mui-btn-block" style="padding: 10px;">
+                  显示下拉菜单
+                </button>
+              </p>
+              <div id="info"></div>
+            </div>
+            
+          </div>
+          <div id="menu-wrapper" class="menu-wrapper hidden">
+            <div id="menu" class="menu">
+              <ul class="mui-table-view mui-table-view-inverted">
+                <li class="mui-table-view-cell">
+                  <a href="javascript:;">Item 1</a>
+                </li>
+                <li class="mui-table-view-cell">
+                  <a href="javascript:;">Item 2</a>
+                </li>
+                <li class="mui-table-view-cell">
+                  <a href="javascript:;">Item 3</a>
+                </li>
+                <li class="mui-table-view-cell">
+                  <a href="javascript:;">Item 4</a>
+                </li>
+                <li class="mui-table-view-cell">
+                  <a href="javascript:;">Item 5</a>
+                </li>
+                <li class="mui-table-view-cell">
+                  <a href="javascript:;">Item 6</a>
+                </li>
+                <li class="mui-table-view-cell">
+                  <a href="javascript:;">Item 7</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div id="menu-backdrop" class="menu-backdrop"></div>
+          
+        </body>
+      
+      </div>
+      <div class="" id="main">
+        <div class="chartc" id="chart1" style="height: 300px">
+        </div>
+        <div class="chartc" id="chart2" style="height: 300px">
+        </div>
+
+        <!-- 销量按钮 -->
+        <div class="btn_item xl" data-url="1" onclick="showWhich(1);">
+            <div class="text">销量统计</div>
+        </div>
+        <div class="btn_item kh" data-url="2" onclick="showWhich(2)">
+            <div class="text">业主统计</div>
+        </div>
+      </div>
+  </body>
+
+  <script type="text/javascript" src="../script/plugin/api.js"></script>
+  <script type="text/javascript" src="../script/plugin/jquery.min.js"></script>
+  <script type="text/javascript" src="../script/common.js"></script>
+  <script src="../script/plugin/echarts.min.js"></script>
+  <script src="../script/main_table.js"></script>
+
+  </html>

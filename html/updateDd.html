@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" href="../css/aui.2.0.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <title>修改业主信息</title>
+    <style>
+            .wrap {
+                height: 100%;
+                /* padding: 0 10px; */
+                background:  url('../image/user_bg.png') no-repeat 0 -7rem;
+                background-color: #dfc7af;
+            }
+
+            /* main部分样式 */
+            main {
+                position: relative;
+                padding: 0 20px;
+                height: 80%;
+            }
+            .main_content {
+                height: 80%;
+                background-color: #fff;
+                border-radius: 10px;
+                margin-top: 10px;
+            }
+            .main_hd {
+                position: relative;
+                height: 50px;
+                line-height: 50px;
+                padding-left: 30px;
+                border-bottom: 2px dashed #36D1A5;
+            }
+
+            .main_hd .left {
+                height: 100%;
+            }
+
+            .main_hd .right {
+                height: 100%;
+                padding-right: 2.3rem;
+            }
+
+            .main_hd .aui-switch {
+                vertical-align: middle;
+                /* margin-left: 2.3rem; */
+            }
+
+            .main_hd::before {
+                content: '';
+                width: 20px;
+                height: 20px;
+                display: block;
+                position: absolute;
+                left: -10px;
+                bottom: -10px;
+                border-radius: 50%;
+                background-color: #36D1A5;
+                z-index: 1;
+            }
+
+            .main_hd::after {
+                content: '';
+                width: 20px;
+                height: 20px;
+                display: block;
+                position: absolute;
+                right: -10px;
+                bottom: -10px;
+                border-radius: 50%;
+                background-color: #36D1A5;
+                z-index: 1;
+            }
+
+            /* main_bd部分样式 */
+            .temp_item {
+                background-color: #fff;
+                padding: 30px 20px 10px 20px;
+                margin-bottom: 0.3rem;
+            }
+
+            .temp_item i {
+                margin: 10px;
+                font-size: 20px;
+            }
+
+            .temp_item div {
+                margin-bottom: 10px;
+            }
+
+            .temp_item input {
+                display: inline-block;
+                width: 80%;
+                height: 1.5rem;
+                min-height: 1.5rem;
+                border: 0;
+                border-bottom: 1px solid #666;
+            }
+
+            .title,
+            .edit {
+                margin: 0 10px;
+            }
+
+            .temp_hd {
+                color: darkgreen;
+                font-weight: bold;
+            }
+
+            .temp_hd .edit {
+                padding: 2px 20px;
+                background-color: #36D1A5;
+                color: #fff;
+            }
+            .main_bd {
+                padding-top: 10px;
+            }
+            .tempList {
+                background-image: url();
+                padding: 0 10px;
+            }
+            /* main部分样式结束 */
+        </style>
+
+</head>
+
+<body class="wrap">
+  <header class="aui-bar aui-bar-nav">
+        <div class="aui-pull-left aui-btn" onclick="api.closeWin();">
+            <span class="fa fa-arrow-left"></span>
+        </div>
+        <div class="aui-title">修改待装信息</div>
+    </header>
+    <main>
+      <div class="main_content">
+        <div class="main_hd clearfix">
+            <div class="left aui-pull-left">用户类型： <span class="khStatus">已签待装</span></div>
+            <div class="right aui-pull-right">
+                <input type="checkbox" class="aui-switch" onclick="toggleStatus();">
+            </div>
+        </div>
+        <div class="main_bd">
+            <div class="tempList aui-list-item">
+                <ul>
+                    <li class="temp_item">
+                        <form action="" name="ddInfo" class="ddInfo">
+                            <div class="temp_hd clearfix">
+                                <span class="title aui-pull-left">待装详情</span>
+                                <span class="edit aui-pull-right" tapmode onclick="getFromData();">保存</span>
+                            </div>
+                            <div class="temp_bd">
+                                <div class="kh_name">
+                                    <i class="fa fa-user-o"></i> <input type="text" name="khName" class="khName"
+                                        placeholder="请输入用户姓名">
+                                </div>
+                                <div class="kh_id">
+                                    <i class="fa fa-id-badge"></i> <input type="number" name="ddId" class="ddId"
+                                        placeholder="请输入用户编号">
+                                </div>
+                                <div class="kh_address">
+                                    <i class="fa fa-map-marker"></i> <input type="text" name="khAddress"
+                                        class="khAddress" placeholder="请输入用户地址">
+                                </div>
+                                <div class="kh_phone">
+                                    <i class="fa fa-phone"></i><input type="number" name="khPhone" class="khPhone"
+                                        placeholder="请输入用户手机号码">
+                                </div>
+                                <div class="fg_name">
+                                    <i class="fa fa-paper-plane"></i><input type="text" name="fgName" class="fgName"
+                                        placeholder="请输入用户选择的装修风格">
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+      </div>
+    </main>
+</body>
+<script src="../script/plugin/jquery.min.js" charset="utf-8"></script>
+<script src="../script/plugin/api.js" charset="utf-8"></script>
+<script src="../script/common.js"></script>
+<script src="../script/plugin/doT.min.js" charset="utf-8"></script>
+<script src="../script/updateDd.js"></script>
+
+</html>

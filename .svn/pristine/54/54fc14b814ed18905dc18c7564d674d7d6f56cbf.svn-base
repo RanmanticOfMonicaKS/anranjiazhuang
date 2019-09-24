@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1 外层循环，控制换行数，其实就是控制打印\n
+        // 2 内循环控制单个 '⭐'的循环个数
+        var str = '';
+        // 内部完整执行'⭐'3个完毕且混行，外部执行一次重复
+        for (var i = 0; i < 3; i++) {
+            for (var j = 0; j < 3; j++) {
+                str += '⭐';
+
+            }
+            str = str + '\n';
+        }
+        console.log(str); //最后打印完成之后在输出结果，不能加入任何循环之中
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 业务需求：给媳妇儿磕一百个响头
+        for (var i = 0; i < 100; i++) {
+            console.log('媳妇儿，老公给你磕了');
+
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

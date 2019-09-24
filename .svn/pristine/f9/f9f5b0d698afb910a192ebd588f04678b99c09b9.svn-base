@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+        <meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+        <title>首页</title>
+        <link rel="stylesheet" type="text/css" href="../css/api.css" />
+        <link rel="stylesheet" href="../css/aui.2.0.css">
+        <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+        <style>
+            .aui-bar-tab-item.aui-active {
+                 background-image: linear-gradient(92deg, #59493f 0%, #dfc7af 100%);
+                color:#fff;
+                /* background-color: transparent;  */
+            }
+        </style>
+    </head>
+
+    <body class="wrap">
+        <div class="aui-bar aui-bar-tab footer">
+            <div class="aui-bar-tab-item aui-active" tapmode >
+                <span class="fa fa-home"></span>
+                <div class="aui-bar-tab-label">首页</div>
+            </div>
+            <div class="aui-bar-tab-item " tapmode >
+                <span class="fa fa-table"></span>
+                <div class="aui-bar-tab-label">报表</div>
+            </div>
+            <div class="aui-bar-tab-item" tapmode >
+                <span class="fa fa-paper-plane"></span>
+                <div class="aui-bar-tab-label">风格中心</div>
+            </div>
+            <div class="aui-bar-tab-item" tapmode >
+                <span class="fa fa-user-circle "></span>
+                <div class="aui-bar-tab-label">我的</div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript" src="../script/plugin/api.js"></script>
+    <script src="../script/plugin/jquery.min.js" charset="utf-8"></script>
+    <script src="../script/main.js"></script>
+   
+
+</html>

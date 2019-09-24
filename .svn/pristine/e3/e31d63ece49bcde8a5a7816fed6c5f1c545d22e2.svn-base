@@ -1,0 +1,300 @@
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/ks\/Desktop\/安然家装\/css\/common\.less
+  }
+
+  line {
+    font-family: \000033
+  }
+}
+
+body,
+html {
+  height: 100%;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/ks\/Desktop\/安然家装\/css\/common\.less
+  }
+
+  line {
+    font-family: \000038
+  }
+}
+
+.flex-sb {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/ks\/Desktop\/安然家装\/css\/common\.less
+  }
+
+  line {
+    font-family: \0000319
+  }
+}
+
+.flex-sa {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/ks\/Desktop\/安然家装\/css\/common\.less
+  }
+
+  line {
+    font-family: \0000331
+  }
+}
+
+.flex-c {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/ks\/Desktop\/安然家装\/css\/common\.less
+  }
+
+  line {
+    font-family: \0000343
+  }
+}
+
+.fiex-1 {
+  -webkit-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex-shrink: 1;
+  flex-shrink: 1;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/ks\/Desktop\/安然家装\/css\/common\.less
+  }
+
+  line {
+    font-family: \0000349
+  }
+}
+
+
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/ks\/Desktop\/安然家装\/css\/common\.less
+  }
+
+  line {
+    font-family: \0000355
+  }
+}
+
+.wrap {
+  background-color: #ccc;
+  height: 100%;
+}
+.main_content {
+    height: 80%;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.footer .aui-bar-tab-item {
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+.footer .aui-active {
+  color: #36d1a5;
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/ks\/Desktop\/安然家装\/css\/common\.less
+  }
+
+  line {
+    font-family: \0000360
+  }
+}
+
+@keyframes hue {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    filter: hue-rotate(-360deg);
+  }
+}
+
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/ks\/Desktop\/安然家装\/css\/common\.less
+  }
+
+  line {
+    font-family: \0000365
+  }
+}
+
+
+
+.wrap {
+  position: relative;
+  background-image: linear-gradient(92deg, #59493f 0%, #dfc7af 100%);
+
+  height: 100%;
+}
+.aui-bar-nav {
+    background-image: linear-gradient(92deg, #59493f 0%, #dfc7af 100%);
+
+}
+.aui-bar-nav .aui-btn {
+    left:20px;
+    padding: 20px;
+    z-index: 999;
+}
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/ks\/Desktop\/安然家装\/css\/common\.less
+  }
+
+  line {
+    font-family: \0000369
+  }
+}
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/ks\/Desktop\/安然家装\/css\/common\.less
+  }
+
+  line {
+    font-family: \0000374
+  }
+}
+
+
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/ks\/Desktop\/安然家装\/css\/common\.less
+  }
+
+  line {
+    font-family: \0000381
+  }
+}
+
+
+
+
+@media -sass-debug-info {
+  filename {
+    font-family: file\:\/\/C\:\/Users\/ks\/Desktop\/安然家装\/css\/common\.less
+  }
+
+  line {
+    font-family: \0000391
+  }
+}
+
+
+/*  清除aui-list-item默认边线*/
+.aui-list:before,
+.aui-list:after,
+.aui-list-item:after,
+.aui-list.aui-list-in .aui-list-item-inner:after {
+  display: none;
+}
+/* 模板部分样式 */
+.tempList {
+  position: relative;
+  padding: 0px 5px;
+  /* background-color: #ccc; */
+  background-image: linear-gradient(92deg, #59493f 0%, #dfc7af 100%);
+
+}
+
+.temp_item .dz {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #dfc7af;
+  box-shadow: -2px -2px 0px #666;
+}
+
+.temp_item {
+  background-color:#fff;
+  padding: 10px 20px 10px 20px;
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  border: 2px solid #36D1A5;
+  color: #36D1A5;
+  -webkit-box-shadow: 2px 2px 0px #666;
+}
+
+.temp_item i {
+  margin: 10px;
+}
+
+.temp_item div {
+  margin-bottom: 10px;
+}
+
+.title,
+.edit {
+  margin: 0 10px;
+}
+
+.temp_hd {
+  color: darkgreen;
+  font-weight: bold;
+}
+
+.temp_hd .edit {
+  padding: 2px 20px;
+  background-color: #36D1A5;
+  color: #fff;
+}
+
+/* 设置区域滚动 */
+main {
+  overflow : auto;
+  -webkit-overflow-scrolling: touch;
+  position: static;
+  
+}

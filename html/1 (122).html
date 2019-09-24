@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1.  数据类型可以作为参数传递
+        function fn(uName, age) {}
+        fn('andy', 18)
+            // 2. 函数也是一种数据类型
+            // 3. 函数也可以作为参数传递
+        function fun(ff) {
+            // var fn = function(){};  fn();
+            // ff = function() { console.log('函数作为参数'); });
+            console.log(ff);
+            // ff() 就可以调用我们传递过来的函数了
+            ff();
+        }
+        // fun(1);
+        // fun('andy');
+        fun(hi);
+        // hi 函数名  函数名里面存的是整个函数  hi =  function hi() {console.log('你好吗'); }
+        function hi() {
+            console.log('你好吗');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

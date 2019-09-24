@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 我们js 的变量根据作用域的不同就可以分为 全局变量和 局部变量
+        // 1. 全局变量   在全局作用域里面的就是全局变量（在最外层函数外部的变量就是全局变量）
+        var num = 10; // 全局变量
+        console.log(num);
+
+        function fn() {
+            console.log(num);
+        }
+        fn();
+        // (1) 全局变量 在整个script 标签中都可以使用。
+        // 2. 局部变量  在局部作用域内的就是局部变量 （在函数内部申明的变量就是局部变量）
+        function fun() {
+            var num1 = 100; // 就是局部变量
+            console.log(num1);
+        }
+        fun();
+        console.log(num1); // num1 is not difine  报错 外面的不可以使用
+
+        // 局部变量只限于当前函数内部有效 外面的不可以使用。
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

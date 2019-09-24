@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <style>
+        /*这里写行内的css*/
+    </style>
+    <!-- 3. 外部js -->
+    <script src="script.js"></script>
+
+    <!--2. 内部js -->
+    <script>
+        alert('秋香姐');
+    </script>
+
+</head>
+
+<body>
+    <div class="demo" style="color: red;"></div>
+
+    <!-- 
+        onclick 是js中的一种事件属性，是用来描述点击事情的 
+        on  表示 当。。。。时  代表一种事情发生的条件
+        onclick  当点击时
+        onmousemove  当鼠标覆盖时  
+    -->
+    <!-- 1.行内js -->
+    <button onclick="alert('秋香')">唐伯虎点</button>
+    <div style="width: 200px; height:200px; background-color: skyblue;" onmousemove="alert('小唐你好')"></div>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /*   求任何两个不同的数的最大值，并用函数封装
+                                                                                                                                                                                                                                                             function getMax(num1, num2) {
+                                                                                                                                                                                                                                                                 if (num1 > num2) {
+                                                                                                                                                                                                                                                                     return num1;
+                                                                                                                                                                                                                                                            } else {
+                                                                                                                                                                                                                                                         return num2;
+                                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                              }
+                                                                                                                                                                                                                                                                 三元表达式做法，更加简洁
+                                                                                                                                                                                                                                                                 function getMax1(num1 ,num2) {
+                                                                                                                                                                                                                                                                 return   num1 > num2 ? num1 : num2;
+                                                                                                                                                                                                                                                                 }
+                                                                                                                                                                                                                                                                 这里， if分支只会执行一条， 不用担心return后面的语句不执行的问题
+                                                                                                                                                                                                                                                                 console.log(getMax(10, 20)); //20 */
+
+
+        //  写一个函数，要求一个数组[5,2,99,101,67,77]中的最大值
+        /*         function getMax2(arr) {
+                    //  声明变量并假设最大值为arr[0];
+           var max = arr[0];
+           // 从下标为1的元素开始遍历数组
+           for (var i = 1; i < arr.length; i++) {
+               if (max < arr[i]) {
+                   max = arr[i];
+               }
+           }
+           return max;
+       }
+       console.log(getMax2([5, 2, 99, 101, 67, 77]));//101 */
+
+
+        // 利用函数：翻转数组，返回一个新的数组['red', 'green', 'blue', 'pink', 'purple']
+        // 声明函数
+        /*       function reverse(arr) {
+                  // 声明一个新的数组
+                  var newArr = [];
+                  // 新数组的下标为i 则原数组中与新数组中元素存在关系：
+                  // newArr[i] = arr[arr.length - i - 1]
+                  for (var i = 0; i < arr.length; i++) {
+                      newArr[i] = arr[arr.length - i - 1];
+
+                  }
+                  return newArr;
+              }
+              console.log(reverse(['red', 'green', 'blue', 'pink', 'purple']));
+              //["purple", "pink", "blue", "green", "red"] */
+
+        // 写一个函数判断是否是闰年
+        function isRun(year) {
+            // 声明一个变量存储判断值
+            var flag = false;
+            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+                flag = true;
+            }
+            return flag;
+        }
+        console.log(isRun(2018)); //false
+        console.log(isRun(2008)); //true 
+        // 判断某年某月某日，是这一年的第几天
+        // 先声明一个函数
+        function getTotalDays(year, month, day) {
+            // 声明一个总的变量，存储总的天数
+            var days = day;
+            for (var i = 1; i < month; i++) {
+                switch (i) {
+                    case 1:
+                    case 3:
+                    case 5:
+                    case 7:
+                    case 8:
+                    case 10:
+                    case 12:
+                        days += 31;
+                        break;
+                    case 4:
+                    case 6:
+                    case 9:
+                    case 11:
+                        days += 30;
+                        break;
+                    case 2:
+                        if (isRun(year)) {
+                            days += 29;
+                        } else {
+                            days += 28;
+                        }
+
+                }
+
+            }
+            return days;
+        }
+
+        console.log(getTotalDays(2018, 12, 22)); //356
+        // 方法2 
+        console.log('--------------------');
+        // 用数组进行计算
+        // 先假设每个这一年是平年，2月有28天
+        // 定义函数 
+        function getTotalDays2(year, month, day) {
+            // 声明一个变量储存总共天数
+            var days = day;
+            // 建立数组 1   2   3   4 
+            var arr = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            // 遍历数组
+            for (var i = 0; i < month - 1; i++) {
+                days += arr[i];
+            }
+            if (isRun(year) && month >= 3) {
+                days += 1;
+            }
+            return days;
+        }
+        console.log(getTotalDays2(2018, 12, 22)); //bingo
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

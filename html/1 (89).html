@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1 收集存储用户输入的班级人数num
+        // 但凡+号运算又设计到一个prompt问题都需要将收集来的数据，转换为数值类型
+        var sum = 0;
+        var averge = 0;
+        var num = prompt('请输入您的班级人数');
+        for (var i = 1; i <= num; i++) {
+
+            var num2 = prompt('请输入第' + i + '个人的成绩');
+            num2 = parseFloat(num2);
+            sum += num2; //一定要放在里面才能完成累加
+            average = sum / num;
+        }
+        // 如果这里把这一句放在外面，里面num2值一直在变化，最后出来sum值等于最后一个num2的值
+
+        alert('你们班的总成绩为：' + sum + '\n' + '平均成绩是' + average); //
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>`

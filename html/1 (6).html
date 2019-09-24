@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 带有？  : 这个三元运算符的式子叫做三元表达式
+        /*   结构  条件表达式？表达式1 : 表达式2
+          1 如果，条件表达式为ture 表达式的结果为表达式1的结果
+          2 如果，条件表达式为false 表达式的结构部为表达式2的结果、 */
+        var i = 0;
+        var num = ++i ? ++i : i++; //这里++i为1 ，条件表达式为true，运行++i，此时num=2
+        console.log(num); //2
+        console.log('---------------');
+        var i = 0;
+        var num = i++ ? ++i : i++;
+        console.log(num); //1
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

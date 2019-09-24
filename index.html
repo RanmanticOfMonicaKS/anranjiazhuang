@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" href="./css/common.css">
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body class="wrap">
+    <div class="main">
+    </div>
+
+</body>
+<script type="text/javascript" src="./script/plugin/api.js"></script>
+<script type="text/javascript">
+    var userInfo = $api.getStorage('userInfo') || {};
+    console.log(JSON.stringify(userInfo));
+    
+    apiready = function () {
+
+        api.setStatusBarStyle({
+            style: 'light',
+            color: '#36D1A5'
+        });
+
+        api.addEventListener({
+            name: 'getToMain'
+        }, function (ret, err) {
+            getToMain();
+            goOff();
+        });
+
+        // 判断用户登录情况，从来判断是进入首页还是登录页
+        getToMain();
+            goOff() ; // 默认直接进入首页
+          
+        
+    }
+    // 进入登录页的方法
+    function getToLogin() {
+
+        api.openFrame({
+            name: 'login',
+            url: './html/login.html',
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                h: 'auto'
+            },
+            pageParam: {
+                name: 'test'
+            },
+            reload: true,
+            bounces: true,
+            bgColor: 'rgba(0,0,0,0)',
+            vScrollBarEnabled: true,
+            hScrollBarEnabled: true
+        });
+
+    }
+
+    // 进入内容部分的方法
+    function getToMain() {
+        // 除了打开页面外，在打开页面之前进行云修复的更新
+        api.addEventListener({
+            name: 'smartupdatefinish'
+        }, function (ret, err) {
+            api.rebootApp();
+        });
+        // 每次进入到main页面时，都进行一次登录或者权限判断
+        var userInfo = $api.getStorage('userInfo') || {};
+        var statusF ;//身份或登录讯息
+       
+        if(userInfo.userstatus && userInfo.userstatus == '1') {
+            statusF = 1; // 表示管理员
+        }
+        if(userInfo.userstatus && userInfo.userstatus == '2') {
+            statusF = 2; // 表示超级管理员
+        }
+        // 全网广播   
+        api.sendEvent({
+            name: 'checkStatusF',
+            extra: {statusF}
+        });
+        api.openFrame({
+            name: 'main',
+            url: './html/main.html',
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                h: 'auto'
+            },
+            reload: true,
+            animation: {
+
+                type: "flip", //动画类型（详见动画类型常量）
+                duration: 500 //动画过渡时间，默认300毫秒
+            },
+            pageParam: {
+                statusF
+            },
+            bounces: false,
+            bgColor: 'rgba(255,0,0,0)',
+            vScrollBarEnabled: true,
+            hScrollBarEnabled: true,
+
+        });
+    }
+    // 判断是否退出 应用
+    var flag = false;
+
+    function goOff() {
+        api.addEventListener({
+            name: 'keyback'
+        }, function (ret, err) {
+            if (!flag) {
+                api.toast({
+                    msg: '再按一次返回键退出' + api.appName,
+                    duration: 2000,
+                    location: 'bottom'
+                });
+            }
+            setTimeout(function () {
+                flag = false;
+            }, 3000);
+            if (flag) {
+                flag = false;
+                api.closeWidget({
+                    silent: true
+                });
+            }
+            flag = true;
+        });
+    }
+    // 添加登录判断和权限判断
+    // 定义显示权限部分
+    
+</script>
+
+</html>

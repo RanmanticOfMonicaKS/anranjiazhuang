@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 冒泡排序 是一种算法,把一系列的数据按照一定的顺序进行排列显示(从小到大,从大到小）
+        // 我们冒泡排序 需要用到 双重for循环  
+        // 外层循环控制的是趟数（以前的行）   一共走多少趟呢    数组的长度 - 1 
+        // 里层循环控制每一趟的 交换次数(以前的列数 不固定)    每一趟交换的次数不同:  数组的长度 - i - 1
+        // var arr = [5, 4, 3, 2, 1];
+        var arr = [1, 5, 77, 8, 2, 12, 34];
+        // 外层循环控制的是趟数（以前的行） 趟数是固定的  是  数组的长度-1
+        for (var i = 0; i < arr.length - 1; i++) {
+            // 里层循环控制每一趟的 交换次数(以前的列数 不固定)  数组的长度 - i - 1
+            for (var j = 0; j < arr.length - i - 1; j++) {
+                // 剩下的就是来判断  之后进行数据交换 
+                // 判断条件  如果前一个数 要大于后一个数 则 进行数据交换  否则不用交换
+                if (arr[j] < arr[j + 1]) {
+                    // 我们就开始 交换两个变量的值 
+                    var temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        console.log(arr);
+        var arr = [5, 4, 3, 2, 1];
+        // var newArr = [];
+        // 设置一个最小值，假设为arr[0];
+
+        // 遍历原函数
+        for (var j = 0; j < arr.length; j++) {
+
+
+            for (var i = j; i < arr.length; i++) {
+                var min = arr[j];
+                if (min > arr[i]) {
+                    var temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                    // newArr[j] = min;
+                }
+            }
+        }
+        console.log(arr); //牛逼！
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 数组是 一组有序的数据，理论上数组里面的元素是任意多个的
+        // 1. 获取数组的长度(获取数组元素的个数) length
+        var arr = ['pink', 'deeppink', 'hotpink', 'lightpink', 'skyblue'];
+        // console.log(arr.length);  //5
+
+        // console.log(arr[0]); // pink
+        // console.log(arr[1]); // deeppink
+        // console.log(arr[2]); // hotpink
+        // 2. 依次输出数组中的每一个元素  用什么方法更简单呢？ 循环
+        for (var i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // 遍历数组 ： 遍历 就是 吧数组元素 从头到尾 访问一次
+        // 3. 遍历数组注意点
+        // for 里面 i  是什么  ？   在循环里面 i 代表计数器   但是在数组里面 i 代表 索引号
+        // 想要输出  数组  arr  里面的 第 i  个元素  怎么 写 ？  arr[i]
+        // i 代表数组的 索引（下标）   arr[i]  是数组中的元素
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

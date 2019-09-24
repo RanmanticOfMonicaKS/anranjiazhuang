@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function getSum(num1, num2) {
+            return num1 + num2;
+        }
+        getSum(20, 30); //
+        // 输出结果
+        console.log(getSum(20, 30)); // 50
+        console.log('--------------------');
+
+        function getSum(num1, num2) {
+            return num1 + num2;
+        }
+        getSum(20, 30); //
+        // 输出结果
+        /* 1  实参比形参少的时候， 上述函数体， 无法正常计算， num2没有给值
+          相当于是undefined.所以 */
+
+        console.log(getSum(20, )); // NaN
+        // 2 实参比形参多的时候，上述函数体，num1 ,num2 都能一一对应，结果一直
+        console.log(getSum(20, 30, 40)); //50,依然是50
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

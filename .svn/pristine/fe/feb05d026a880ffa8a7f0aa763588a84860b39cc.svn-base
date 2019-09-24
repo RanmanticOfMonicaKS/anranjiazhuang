@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 1. if 分支语句  if 如果的意思 
+        // 2. 语法规范 
+        // if (条件表达式) {
+        //     // 里面执行的代码 
+        // }
+
+        // 3. 执行思路 
+        // 条件表达式 返回一个结果  如果结果为 true  则就执行  大括号里面的代码
+        // 如果条件表达式结果为假 false  则不执行大括号里面的代码  就执行if 下面的代码
+        // 4. 代码演示
+        // if (true) {
+        //     console.log('哒哒哒，我执行了');
+        // }
+        // console.log('代码执行完毕');
+        // 5. 小例子  如果考试成绩100分，我就给你做大肘子吃
+        var score = 100; // score 成绩 
+        if (score == 100) {
+            console.log('今天晚上导师给你做大肘子吃');
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

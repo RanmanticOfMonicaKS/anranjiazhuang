@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 要求：求一组数值 [2, 6, 1, 7, 4] 的和 还有 平均值
+        // 思路： 2 + 6 + 1 + 7 + 4   本质就是把数组元素相加 
+        // 1. 首先有这个数组，然后才能进行操作
+        // 2. 找到每个数组元素 然后依次相加 arr[i] 循环 遍历数组 
+        /* var arr = [2, 6, 1, 7, 4];
+        var sum = 0; // 存储和
+        var average = 0; // 存储平均值
+        for (var i = 0; i < arr.length; i++) {
+            sum = sum + arr[i]; // 数组元素相加   arr[i]
+        }
+        average = sum / arr.length;
+        console.log('此数组的和是：' + sum);
+        console.log('此数组的平均值是：' + average); */
+
+
+        // 扩展
+        // 代码优化一个小细节：先把数组的长度求出来，存到一个变量中，方便使用
+        var arr = [2, 6, 1, 7, 4];
+        var len = arr.length; // 5个
+        // console.log(len);
+
+        var sum = 0; // 存储和
+        var average = 0; // 存储平均值
+        for (var i = 0; i < len; i++) {
+
+            sum += arr[i]; // 数组元素相加   arr[i]
+        }
+        average = sum / len;
+        console.log('此数组的和是：' + sum);
+        console.log('此数组的平均值是：' + average);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

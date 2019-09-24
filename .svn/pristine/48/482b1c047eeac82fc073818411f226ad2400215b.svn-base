@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // for语法规范
+        // for (初始化变量; 条件表达式; 自增表达式) {
+        //     //循环体
+        // }
+        // 变量就是我们说出计数器 
+        // for循环可以重复执行某些相同代码
+        for (var i = 0; i < 10; i++) {
+            console.log('你好吗');
+        }
+        // for循环可以重复执行些许不同的代码， 因为我们有计数器
+        for (var i = 1; i <= 10; i++) {
+            console.log('我今年' + i + '岁');
+
+        }
+        // for循环可以重复执行某些操作 比如 算术运算符 加法操作
+        var sum = 0;
+        for (var i = 1; i <= 10; i++) {
+            sum = sum + i;
+        }
+        console.log(sum);
+
+        // 随着需求增加， 我们有双重for循环可以做更多， 更好看效果
+        // 双重for循环， 外层循环一次， 里层for 循环全部。
+
+        // for 循环 是 循环条件和数字 直接相关的循环
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
